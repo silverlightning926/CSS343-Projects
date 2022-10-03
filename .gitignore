@@ -1,0 +1,7 @@
+# Ignore Generated Files
+
+output.txt
+
+# Clang
+.clang-format
+clang-tidy
