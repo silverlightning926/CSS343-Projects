@@ -1,0 +1,59 @@
+Wed Oct  5 13:30:47 PDT 2022
+Linux csslab7 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+Hello World
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+11035 warnings generated.
+Suppressed 11035 warnings (11035 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./main.cpp
+4c4
+<     std::cout << "Hello World" << std::endl;
+---
+>   std::cout << "Hello World" << std::endl;
+6c6
+<     return 0;
+---
+>   return 0;
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==296009== Memcheck, a memory error detector
+==296009== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==296009== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==296009== Command: ./a.out
+==296009== Parent PID: 295959
+==296009== 
+==296009== 
+==296009== HEAP SUMMARY:
+==296009==     in use at exit: 0 bytes in 0 blocks
+==296009==   total heap usage: 2 allocs, 2 frees, 76,800 bytes allocated
+==296009== 
+==296009== All heap blocks were freed -- no leaks are possible
+==296009== 
+==296009== For lists of detected and suppressed errors, rerun with: -s
+==296009== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+./create-output.sh: line 129: ./check-code-coverage.sh: Permission denied
+Wed Oct  5 13:30:50 PDT 2022
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
