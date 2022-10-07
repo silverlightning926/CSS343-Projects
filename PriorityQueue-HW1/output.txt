@@ -1,4 +1,4 @@
-Fri Oct  7 07:57:18 PDT 2022
+Fri Oct  7 08:24:34 PDT 2022
 Linux csslab7 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 =====================================================
@@ -32,21 +32,21 @@ Running clang-format on ./patient.cpp
 =====================================================
 6. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
-==449000== Memcheck, a memory error detector
-==449000== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==449000== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==449000== Command: ./a.out
-==449000== Parent PID: 448868
-==449000== 
-==449000== 
-==449000== HEAP SUMMARY:
-==449000==     in use at exit: 0 bytes in 0 blocks
-==449000==   total heap usage: 38 allocs, 38 frees, 88,908 bytes allocated
-==449000== 
-==449000== All heap blocks were freed -- no leaks are possible
-==449000== 
-==449000== For lists of detected and suppressed errors, rerun with: -s
-==449000== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==451522== Memcheck, a memory error detector
+==451522== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==451522== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==451522== Command: ./a.out
+==451522== Parent PID: 451373
+==451522== 
+==451522== 
+==451522== HEAP SUMMARY:
+==451522==     in use at exit: 0 bytes in 0 blocks
+==451522==   total heap usage: 38 allocs, 38 frees, 88,908 bytes allocated
+==451522== 
+==451522== All heap blocks were freed -- no leaks are possible
+==451522== 
+==451522== For lists of detected and suppressed errors, rerun with: -s
+==451522== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
 7. Tests have full code coverage
 =====================================================
@@ -54,12 +54,12 @@ File '/home/NETID/siddrao/CSS343Projects/PriorityQueue-HW1/covidpriorityqueue.cp
 Name                                       Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
 ----------------------------------------------------------------------------------------------------------------------
 CovidPriorityQueue::CovidPriorityQueue()         1       0 100.00%         1       0 100.00%         0       0   0.00%
-CovidPriorityQueue::empty() const                1       0 100.00%         1       0 100.00%         0       0   0.00%
-CovidPriorityQueue::push(Patient const&)         1       0 100.00%         1       0 100.00%         0       0   0.00%
+CovidPriorityQueue::empty() const                1       0 100.00%         3       0 100.00%         0       0   0.00%
+CovidPriorityQueue::push(Patient const&)         1       0 100.00%         3       0 100.00%         0       0   0.00%
 CovidPriorityQueue::pop()                        1       0 100.00%         1       0 100.00%         0       0   0.00%
-CovidPriorityQueue::top()                        1       0 100.00%         1       0 100.00%         0       0   0.00%
+CovidPriorityQueue::top()                        1       0 100.00%         3       0 100.00%         0       0   0.00%
 ----------------------------------------------------------------------------------------------------------------------
-TOTAL                                            5       0 100.00%         5       0 100.00%         0       0   0.00%
+TOTAL                                            5       0 100.00%        11       0 100.00%         0       0   0.00%
 
 File '/home/NETID/siddrao/CSS343Projects/PriorityQueue-HW1/main.cpp':
 Name                                       Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
@@ -72,12 +72,12 @@ File '/home/NETID/siddrao/CSS343Projects/PriorityQueue-HW1/patient.cpp':
 Name                                                                                                           Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Patient::Patient(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool)         1       0 100.00%         5       0 100.00%         0       0   0.00%
-Patient::getName[abi:cxx11]() const                                                                                  1       0 100.00%         1       0 100.00%         0       0   0.00%
-Patient::setName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)                    1       1   0.00%         1       1   0.00%         0       0   0.00%
-Patient::getAge() const                                                                                              1       0 100.00%         1       0 100.00%         0       0   0.00%
-Patient::setAge(int)                                                                                                 1       1   0.00%         1       1   0.00%         0       0   0.00%
-Patient::getHasPrecondition() const                                                                                  1       0 100.00%         1       0 100.00%         0       0   0.00%
-Patient::setHasPrecondition(bool)                                                                                    1       1   0.00%         1       1   0.00%         0       0   0.00%
+Patient::getName[abi:cxx11]() const                                                                                  1       0 100.00%         3       0 100.00%         0       0   0.00%
+Patient::setName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)                    1       1   0.00%         3       3   0.00%         0       0   0.00%
+Patient::getAge() const                                                                                              1       0 100.00%         3       0 100.00%         0       0   0.00%
+Patient::setAge(int)                                                                                                 1       1   0.00%         3       3   0.00%         0       0   0.00%
+Patient::getHasPrecondition() const                                                                                  1       0 100.00%         3       0 100.00%         0       0   0.00%
+Patient::setHasPrecondition(bool)                                                                                    1       1   0.00%         3       3   0.00%         0       0   0.00%
 Patient::getPriorityValue() const                                                                                    4       0 100.00%         3       0 100.00%         2       0 100.00%
 Patient::operator<(Patient const&) const                                                                             1       0 100.00%         3       0 100.00%         0       0   0.00%
 Patient::operator<=(Patient const&) const                                                                            1       1   0.00%         3       3   0.00%         0       0   0.00%
@@ -85,7 +85,7 @@ Patient::operator>(Patient const&) const                                        
 Patient::operator>=(Patient const&) const                                                                            1       1   0.00%         3       3   0.00%         0       0   0.00%
 operator<<(std::ostream&, Patient const&)                                                                            1       0 100.00%         9       0 100.00%         0       0   0.00%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                               16       6  62.50%        35      12  65.71%         2       0 100.00%
+TOTAL                                                                                                               16       6  62.50%        47      18  61.70%         2       0 100.00%
 =====================================================
 The lines below were never executed
 =====================================================
@@ -95,19 +95,25 @@ The lines below were never executed
    83|      0|    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
    84|      0|    std::cout << "Invalid input. Try again: ";
    85|      0|  }
-   16|      0|void Patient::setName(std::string newValue) { name = std::move(newValue); }
-   20|      0|void Patient::setAge(int newValue) { age = std::move(newValue); }
-   24|      0|void Patient::setHasPrecondition(bool newValue) { hasPrecondition = newValue; }
-   34|      0|bool Patient::operator<=(const Patient &patient) const {
-   35|      0|  return getPriorityValue() <= patient.getPriorityValue();
-   36|      0|}
-   38|      0|bool Patient::operator>(const Patient &patient) const {
-   39|      0|  return getPriorityValue() > patient.getPriorityValue();
-   40|      0|}
-   42|      0|bool Patient::operator>=(const Patient &patient) const {
-   43|      0|  return getPriorityValue() >= patient.getPriorityValue();
-   44|      0|}
-Fri Oct  7 07:58:11 PDT 2022
+   21|      0|void Patient::setName(std::string newValue) {
+   22|      0|  name = std::move(newValue);
+   23|      0|} // Implementation Of name Field Setter
+   29|      0|void Patient::setAge(int newValue) {
+   30|      0|  age = std::move(newValue);
+   31|      0|} // Implementation of age Field Setter
+   37|      0|void Patient::setHasPrecondition(bool newValue) {
+   38|      0|  hasPrecondition = newValue;
+   39|      0|} // Implementation of hasPrecondition Setter
+   52|      0|bool Patient::operator<=(const Patient &patient) const {
+   53|      0|  return getPriorityValue() <= patient.getPriorityValue();
+   54|      0|}
+   57|      0|bool Patient::operator>(const Patient &patient) const {
+   58|      0|  return getPriorityValue() > patient.getPriorityValue();
+   59|      0|}
+   62|      0|bool Patient::operator>=(const Patient &patient) const {
+   63|      0|  return getPriorityValue() >= patient.getPriorityValue();
+   64|      0|}
+Fri Oct  7 08:24:57 PDT 2022
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command
