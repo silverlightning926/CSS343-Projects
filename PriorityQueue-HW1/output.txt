@@ -1,4 +1,4 @@
-Wed Oct  5 13:30:47 PDT 2022
+Fri Oct  7 07:57:18 PDT 2022
 Linux csslab7 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 =====================================================
@@ -7,51 +7,107 @@ uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(l
 =====================================================
 2. Runs and produces correct output
 =====================================================
-Hello World
+Enter Available Doses: 
+1. [ Name: Maggie, Age: 80, Has Precondition: true ]
+2. [ Name: Robert , Age: 25, Has Precondition: true ]
+3. [ Name: James, Age: 90, Has Precondition: false ]
+4. [ Name: Jessica, Age: 13, Has Precondition: false ]
 =====================================================
 3. clang-tidy warnings are fixed
 =====================================================
-11035 warnings generated.
-Suppressed 11035 warnings (11035 in non-user code).
+13513 warnings generated.
+28235 warnings generated.
+39275 warnings generated.
+Suppressed 39275 warnings (39275 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
 =====================================================
 4. clang-format does not find any formatting issues
 =====================================================
+Running clang-format on ./covidpriorityqueue.cpp
 Running clang-format on ./main.cpp
-4c4
-<     std::cout << "Hello World" << std::endl;
----
->   std::cout << "Hello World" << std::endl;
-6c6
-<     return 0;
----
->   return 0;
+Running clang-format on ./patient.cpp
 =====================================================
 5. No memory leaks using g++
 =====================================================
 =====================================================
 6. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
-==296009== Memcheck, a memory error detector
-==296009== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==296009== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==296009== Command: ./a.out
-==296009== Parent PID: 295959
-==296009== 
-==296009== 
-==296009== HEAP SUMMARY:
-==296009==     in use at exit: 0 bytes in 0 blocks
-==296009==   total heap usage: 2 allocs, 2 frees, 76,800 bytes allocated
-==296009== 
-==296009== All heap blocks were freed -- no leaks are possible
-==296009== 
-==296009== For lists of detected and suppressed errors, rerun with: -s
-==296009== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==449000== Memcheck, a memory error detector
+==449000== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==449000== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==449000== Command: ./a.out
+==449000== Parent PID: 448868
+==449000== 
+==449000== 
+==449000== HEAP SUMMARY:
+==449000==     in use at exit: 0 bytes in 0 blocks
+==449000==   total heap usage: 38 allocs, 38 frees, 88,908 bytes allocated
+==449000== 
+==449000== All heap blocks were freed -- no leaks are possible
+==449000== 
+==449000== For lists of detected and suppressed errors, rerun with: -s
+==449000== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
 7. Tests have full code coverage
 =====================================================
-./create-output.sh: line 129: ./check-code-coverage.sh: Permission denied
-Wed Oct  5 13:30:50 PDT 2022
+File '/home/NETID/siddrao/CSS343Projects/PriorityQueue-HW1/covidpriorityqueue.cpp':
+Name                                       Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+----------------------------------------------------------------------------------------------------------------------
+CovidPriorityQueue::CovidPriorityQueue()         1       0 100.00%         1       0 100.00%         0       0   0.00%
+CovidPriorityQueue::empty() const                1       0 100.00%         1       0 100.00%         0       0   0.00%
+CovidPriorityQueue::push(Patient const&)         1       0 100.00%         1       0 100.00%         0       0   0.00%
+CovidPriorityQueue::pop()                        1       0 100.00%         1       0 100.00%         0       0   0.00%
+CovidPriorityQueue::top()                        1       0 100.00%         1       0 100.00%         0       0   0.00%
+----------------------------------------------------------------------------------------------------------------------
+TOTAL                                            5       0 100.00%         5       0 100.00%         0       0   0.00%
+
+File '/home/NETID/siddrao/CSS343Projects/PriorityQueue-HW1/main.cpp':
+Name                                       Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+----------------------------------------------------------------------------------------------------------------------
+main                                            31       2  93.55%        56       6  89.29%        26       5  80.77%
+----------------------------------------------------------------------------------------------------------------------
+TOTAL                                           31       2  93.55%        56       6  89.29%        26       5  80.77%
+
+File '/home/NETID/siddrao/CSS343Projects/PriorityQueue-HW1/patient.cpp':
+Name                                                                                                           Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Patient::Patient(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool)         1       0 100.00%         5       0 100.00%         0       0   0.00%
+Patient::getName[abi:cxx11]() const                                                                                  1       0 100.00%         1       0 100.00%         0       0   0.00%
+Patient::setName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)                    1       1   0.00%         1       1   0.00%         0       0   0.00%
+Patient::getAge() const                                                                                              1       0 100.00%         1       0 100.00%         0       0   0.00%
+Patient::setAge(int)                                                                                                 1       1   0.00%         1       1   0.00%         0       0   0.00%
+Patient::getHasPrecondition() const                                                                                  1       0 100.00%         1       0 100.00%         0       0   0.00%
+Patient::setHasPrecondition(bool)                                                                                    1       1   0.00%         1       1   0.00%         0       0   0.00%
+Patient::getPriorityValue() const                                                                                    4       0 100.00%         3       0 100.00%         2       0 100.00%
+Patient::operator<(Patient const&) const                                                                             1       0 100.00%         3       0 100.00%         0       0   0.00%
+Patient::operator<=(Patient const&) const                                                                            1       1   0.00%         3       3   0.00%         0       0   0.00%
+Patient::operator>(Patient const&) const                                                                             1       1   0.00%         3       3   0.00%         0       0   0.00%
+Patient::operator>=(Patient const&) const                                                                            1       1   0.00%         3       3   0.00%         0       0   0.00%
+operator<<(std::ostream&, Patient const&)                                                                            1       0 100.00%         9       0 100.00%         0       0   0.00%
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                               16       6  62.50%        35      12  65.71%         2       0 100.00%
+=====================================================
+The lines below were never executed
+=====================================================
+   46|      0|    std::cerr << "Error Finding File!\n"; // If File Not Found
+   47|      0|  }
+   82|      0|    std::cin.clear();
+   83|      0|    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+   84|      0|    std::cout << "Invalid input. Try again: ";
+   85|      0|  }
+   16|      0|void Patient::setName(std::string newValue) { name = std::move(newValue); }
+   20|      0|void Patient::setAge(int newValue) { age = std::move(newValue); }
+   24|      0|void Patient::setHasPrecondition(bool newValue) { hasPrecondition = newValue; }
+   34|      0|bool Patient::operator<=(const Patient &patient) const {
+   35|      0|  return getPriorityValue() <= patient.getPriorityValue();
+   36|      0|}
+   38|      0|bool Patient::operator>(const Patient &patient) const {
+   39|      0|  return getPriorityValue() > patient.getPriorityValue();
+   40|      0|}
+   42|      0|bool Patient::operator>=(const Patient &patient) const {
+   43|      0|  return getPriorityValue() >= patient.getPriorityValue();
+   44|      0|}
+Fri Oct  7 07:58:11 PDT 2022
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command
