@@ -1,4 +1,4 @@
-#include "CovidPriorityQueue.h"
+#include "covidpriorityqueue.h"
 
 CovidPriorityQueue::CovidPriorityQueue() = default;
 

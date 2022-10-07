@@ -1,6 +1,6 @@
-//
-// Created by siddr on 10/5/2022.
-//
+/*
+* patient.h
+*/
 
 #ifndef COVIDPRIORITYQUEUE_P1_PATIENT_H
 #define COVIDPRIORITYQUEUE_P1_PATIENT_H

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <queue>
 
-#include "Patient.h"
+#include "patient.h"
 
 class CovidPriorityQueue {
 private:

@@ -2,7 +2,7 @@
 // Created by siddr on 10/5/2022.
 //
 
-#include "Patient.h"
+#include "patient.h"
 #include <iostream>
 
 Patient::Patient(std::string name, int age, bool hasPrecondition) {
