@@ -51,6 +51,8 @@ public:
   vector<int> inorderTraversal() const;
 
 private:
+  Node *leftMost(Node *n) const;
+
   // helper function to thread a tree
   void threadTree(Node *headPtr);
 
@@ -81,12 +83,6 @@ private:
   int totalNodes;
 
   Node *findInorderPredecessor(Node *node);
-
-  Node *case1(Node *root, Node *par, Node *ptr);
-
-  Node *case2(Node *root, Node *par, Node *ptr);
-
-  Node *case3(Node *root, Node *par, Node *ptr);
 };
 
 #endif

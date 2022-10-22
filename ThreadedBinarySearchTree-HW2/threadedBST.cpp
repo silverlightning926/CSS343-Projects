@@ -1,4 +1,6 @@
 #include "threadedBST.h"
+#include <bits/stdc++.h>
+#include <cmath>
 #include <vector>
 
 using namespace std;
@@ -160,18 +162,29 @@ Node *ThreadedBST::getEntry(int n) const {
 // returns true if empty, false if not
 bool ThreadedBST::isEmpty() const { return (headPtr == nullptr); }
 
+Node *ThreadedBST::leftMost(Node *n) const {
+  if (n == nullptr)
+    return nullptr;
+
+  while (n->leftPtr != nullptr)
+    n = n->leftPtr;
+
+  return n;
+}
+
 // iterator to do inorder traversal of the tree
 vector<int> ThreadedBST::inorderTraversal() const {
   vector<int> inorderTree;
 
-  Node *pointer = headPtr;
-
-  while (pointer->leftPtr != nullptr)
-    pointer = pointer->leftPtr;
+  Node *pointer = leftMost(headPtr);
 
   while (pointer != nullptr) {
     inorderTree.push_back(pointer->value);
-    pointer = findInOrderSuccessor(pointer);
+
+    if (pointer->isThread)
+      pointer = pointer->rightPtr;
+    else
+      pointer = leftMost(pointer->rightPtr);
   }
 
   return inorderTree;
@@ -179,7 +192,22 @@ vector<int> ThreadedBST::inorderTraversal() const {
 
 // removes a node
 Node *ThreadedBST::remove(int value) {
-    
+  vector<int> inorderBST = inorderTraversal();
+  vector<int> newTree;
+
+  for (int i : inorderBST) {
+    if (i != value) {
+      newTree.push_back(i);
+      totalNodes--;
+    }
+  }
+
+  clear(headPtr);
+
+  headPtr = buildSubTree(newTree, 0, newTree.size() - 1);
+  threadTree(headPtr);
+
+  return headPtr;
 }
 
 Node *ThreadedBST::findInOrderSuccessor(Node *node) const {
