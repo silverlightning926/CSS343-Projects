@@ -1,25 +1,26 @@
 #include "threadedBST.h"
 #include <bits/stdc++.h>
-#include <cmath>
 #include <vector>
 
-using namespace std;
-
 // output overload
-ostream &operator<<(ostream &out, const ThreadedBST &bst) {
+std::ostream &operator<<(std::ostream &out, const ThreadedBST &bst) {
   out << "[";
 
   for (int i : bst.inorderTraversal()) {
     out << i << ", ";
   }
 
-  out << "]" << endl;
+  out << "]" << std::endl;
 
   return out;
 }
 
 // assignment overload for copying
 ThreadedBST &ThreadedBST::operator=(const ThreadedBST &bst) {
+  if (&bst != this) {
+    clear(headPtr);
+  }
+
   totalNodes = bst.totalNodes;
   headPtr = buildSubTree(bst.inorderTraversal(), 0,
                          static_cast<int>(bst.inorderTraversal().size() - 1));
@@ -32,7 +33,7 @@ ThreadedBST &ThreadedBST::operator=(const ThreadedBST &bst) {
 ThreadedBST::ThreadedBST(int n) : totalNodes{n} {
 
   // vector for adding inputs
-  vector<int> nums;
+  std::vector<int> nums;
   for (int i = 1; i <= n; i++) {
     nums.push_back(i);
   }
@@ -45,36 +46,37 @@ ThreadedBST::ThreadedBST(int n) : totalNodes{n} {
 void ThreadedBST::threadTree(Node *headPtr) {
 
   // find left most child of tree
-  Node *currentNode = headPtr;
-  while (currentNode->leftPtr != nullptr) {
-    currentNode = currentNode->leftPtr;
+  Node *current_node = headPtr;
+  while (current_node->leftPtr != nullptr) {
+    current_node = current_node->leftPtr;
   }
-  if (currentNode->rightPtr != nullptr) {
-    currentNode = currentNode->rightPtr;
+  if (current_node->rightPtr != nullptr) {
+    current_node = current_node->rightPtr;
   }
 
   // traverse tree and create threads when necessary
-  while (currentNode->value < totalNodes) {
+  while (current_node->value < totalNodes) {
 
-    if (currentNode->rightPtr == nullptr) { // thread needed
+    if (current_node->rightPtr == nullptr) { // thread needed
       // create thread and follow it
-      currentNode->rightPtr = getEntry(currentNode->value + 1);
-      currentNode->isThread = true;
-      currentNode = currentNode->rightPtr;
+      current_node->rightPtr = getEntry(current_node->value + 1);
+      current_node->isThread = true;
+      current_node = current_node->rightPtr;
 
-    } else if (currentNode->leftPtr != nullptr) {
+    } else if (current_node->leftPtr != nullptr) {
       // explore left child/subtree
-      currentNode = currentNode->leftPtr;
+      current_node = current_node->leftPtr;
     } else {
       // explore right child/subtree
-      currentNode = currentNode->rightPtr;
+      current_node = current_node->rightPtr;
     }
   }
 }
 
 // helper function to build subtrees recursively
 // returns a Node* to make recursion possible
-Node *ThreadedBST::buildSubTree(const vector<int> &nums, int lower, int upper) {
+Node *ThreadedBST::buildSubTree(const std::vector<int> &nums, int lower,
+                                int upper) {
 
   if (lower > upper)
     return nullptr;
@@ -98,8 +100,10 @@ Node *ThreadedBST::buildSubTree(const vector<int> &nums, int lower, int upper) {
   return root;
 }
 
-int ThreadedBST::max(vector<int> nums, int strt, int end) {
-  int i, max = nums[strt], maxind = strt;
+int ThreadedBST::max(std::vector<int> nums, int strt, int end) {
+  int i = 0;
+  int max = nums[strt];
+  int maxind = strt;
   for (i = strt + 1; i <= end; i++) {
     if (nums[i] > max) {
       max = nums[i];
@@ -111,12 +115,12 @@ int ThreadedBST::max(vector<int> nums, int strt, int end) {
 }
 
 Node *ThreadedBST::newNode(int value) {
-  Node *newNode = new Node();
-  newNode->value = value;
-  newNode->isThread = false;
-  newNode->leftPtr = nullptr;
-  newNode->rightPtr = nullptr;
-  return newNode;
+  Node *new_node = new Node();
+  new_node->value = value;
+  new_node->isThread = false;
+  new_node->leftPtr = nullptr;
+  new_node->rightPtr = nullptr;
+  return new_node;
 }
 
 ThreadedBST::ThreadedBST(const ThreadedBST &tbst)
@@ -162,49 +166,38 @@ Node *ThreadedBST::getEntry(int n) const {
 // returns true if empty, false if not
 bool ThreadedBST::isEmpty() const { return (headPtr == nullptr); }
 
-Node *ThreadedBST::leftMost(Node *n) const {
-  if (n == nullptr)
-    return nullptr;
-
-  while (n->leftPtr != nullptr)
-    n = n->leftPtr;
-
-  return n;
-}
-
 // iterator to do inorder traversal of the tree
-vector<int> ThreadedBST::inorderTraversal() const {
-  vector<int> inorderTree;
+std::vector<int> ThreadedBST::inorderTraversal() const {
+  std::vector<int> inorder_tree;
 
-  Node *pointer = leftMost(headPtr);
+  Node *pointer = headPtr;
+
+  while (pointer->leftPtr != nullptr)
+    pointer = pointer->leftPtr;
 
   while (pointer != nullptr) {
-    inorderTree.push_back(pointer->value);
-
-    if (pointer->isThread)
-      pointer = pointer->rightPtr;
-    else
-      pointer = leftMost(pointer->rightPtr);
+    inorder_tree.push_back(pointer->value);
+    pointer = findInOrderSuccessor(pointer);
   }
 
-  return inorderTree;
+  return inorder_tree;
 }
 
 // removes a node
 Node *ThreadedBST::remove(int value) {
-  vector<int> inorderBST = inorderTraversal();
-  vector<int> newTree;
+  std::vector<int> inorder_bst = inorderTraversal();
+  std::vector<int> new_tree;
 
-  for (int i : inorderBST) {
+  for (int i : inorder_bst) {
     if (i != value) {
-      newTree.push_back(i);
+      new_tree.push_back(i);
       totalNodes--;
     }
   }
 
   clear(headPtr);
 
-  headPtr = buildSubTree(newTree, 0, newTree.size() - 1);
+  headPtr = buildSubTree(new_tree, 0, new_tree.size() - 1);
   threadTree(headPtr);
 
   return headPtr;
@@ -224,13 +217,4 @@ Node *ThreadedBST::findInOrderSuccessor(Node *node) const {
   }
 
   return nullptr;
-}
-
-Node *ThreadedBST::findInorderPredecessor(Node *node) {
-  Node *pointer = node;
-
-  pointer = pointer->leftPtr;
-  while (!pointer->isThread)
-    pointer = pointer->rightPtr;
-  return node;
 }

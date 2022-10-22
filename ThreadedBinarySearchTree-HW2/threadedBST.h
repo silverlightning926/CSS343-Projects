@@ -12,8 +12,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 class Node {
   friend class ThreadedBST;
 
@@ -27,7 +25,7 @@ private:
 class ThreadedBST {
 
   // output overload
-  friend ostream &operator<<(ostream &out, const ThreadedBST &bst);
+  friend std::ostream &operator<<(std::ostream &out, const ThreadedBST &bst);
 
 public:
   // assignment overload for copying
@@ -48,11 +46,9 @@ public:
   Node *remove(int value);
 
   // iterator to do inorder traversal of the tree
-  vector<int> inorderTraversal() const;
+  std::vector<int> inorderTraversal() const;
 
 private:
-  Node *leftMost(Node *n) const;
-
   // helper function to thread a tree
   void threadTree(Node *headPtr);
 
@@ -68,11 +64,11 @@ private:
 
   // helper function to build subtrees recursively
   // returns a Node* to make recursion possible
-  Node *buildSubTree(const vector<int> &nums, int lower, int upper);
+  Node *buildSubTree(const std::vector<int> &nums, int lower, int upper);
 
-  int max(const vector<int> nums, int strt, int end);
+  static int max(std::vector<int> nums, int strt, int end);
 
-  Node *newNode(int value);
+  static Node *newNode(int value);
 
   Node *findInOrderSuccessor(Node *node) const;
 
@@ -81,8 +77,6 @@ private:
 
   // total number of nodes in the tree
   int totalNodes;
-
-  Node *findInorderPredecessor(Node *node);
 };
 
 #endif

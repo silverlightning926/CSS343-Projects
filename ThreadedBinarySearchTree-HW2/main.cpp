@@ -1,36 +1,36 @@
 #include "threadedBST.h"
 #include <iostream>
 
-using namespace std;
-
-void test1() { // size 1
+void Test1() { // size 1
   int n = 1;
-  ThreadedBST origTree(n);        // creating a tree
-  ThreadedBST newTree = origTree; // copying original tree
-  // remove all evens from newTree
+  ThreadedBST orig_tree(n);         // creating a tree
+  ThreadedBST new_tree = orig_tree; // copying original tree
+  // remove all evens from new_tree
   for (int i = 2; i < n + 1; i += 2) {
-    newTree.remove(i);
+    new_tree.remove(i);
   }
   // output
-  cout << "Original Tree: " << origTree << endl;
-  cout << "New Tree: " << newTree << endl << endl;
+  std::cout << "Original Tree: " << orig_tree << std::endl;
+  std::cout << "New Tree: " << new_tree << std::endl << std::endl;
 }
 
-void test2() {
+void Test2() { // size 4
   int n = 4;
-  ThreadedBST origTree(n);
-  ThreadedBST newTree(origTree);
+  ThreadedBST orig_tree(n);         // creating a tree
+  ThreadedBST new_tree = orig_tree; // copying original tree
+  // remove all evens from new_tree
   for (int i = 2; i < n + 1; i += 2) {
-    newTree.remove(i);
+    new_tree.remove(i);
   }
-  cout << "Original Tree: " << origTree << endl;
-  cout << "New Tree: " << newTree << endl << endl;
+  // output
+  std::cout << "Original Tree: " << orig_tree << std::endl;
+  std::cout << "New Tree: " << new_tree << std::endl << std::endl;
 }
 
 int main() {
 
-  test1();
-  test2();
+  Test1();
+  Test2();
 
   return 0;
 }
