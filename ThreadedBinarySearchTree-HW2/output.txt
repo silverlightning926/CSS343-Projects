@@ -1,4 +1,4 @@
-Sat Oct 22 18:46:47 PDT 2022
+Sat Oct 22 18:54:29 PDT 2022
 Linux csslab7 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access)
 =====================================================
@@ -52,26 +52,83 @@ Running clang-format on ./threadedBST.cpp
 =====================================================
 6. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
-==562759== Memcheck, a memory error detector
-==562759== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==562759== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==562759== Command: ./a.out
-==562759== Parent PID: 562666
-==562759== 
-==562759== 
-==562759== HEAP SUMMARY:
-==562759==     in use at exit: 0 bytes in 0 blocks
-==562759==   total heap usage: 60 allocs, 60 frees, 77,656 bytes allocated
-==562759== 
-==562759== All heap blocks were freed -- no leaks are possible
-==562759== 
-==562759== For lists of detected and suppressed errors, rerun with: -s
-==562759== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==563969== Memcheck, a memory error detector
+==563969== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==563969== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==563969== Command: ./a.out
+==563969== Parent PID: 563876
+==563969== 
+==563969== 
+==563969== HEAP SUMMARY:
+==563969==     in use at exit: 0 bytes in 0 blocks
+==563969==   total heap usage: 60 allocs, 60 frees, 77,656 bytes allocated
+==563969== 
+==563969== All heap blocks were freed -- no leaks are possible
+==563969== 
+==563969== For lists of detected and suppressed errors, rerun with: -s
+==563969== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
 7. Tests have full code coverage
 =====================================================
-WARNING: check-code-coverage.sh script is missing
-Sat Oct 22 18:47:04 PDT 2022
+File '/home/NETID/siddrao/CSS343Projects/ThreadedBinarySearchTree-HW2/main.cpp':
+Name                        Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+-------------------------------------------------------------------------------------------------------
+Test1()                           4       2  50.00%        10       2  80.00%         2       1  50.00%
+Test2()                           4       0 100.00%        10       0 100.00%         2       0 100.00%
+main                              1       0 100.00%         5       0 100.00%         0       0   0.00%
+-------------------------------------------------------------------------------------------------------
+TOTAL                             9       2  77.78%        25       2  92.00%         4       1  75.00%
+
+File '/home/NETID/siddrao/CSS343Projects/ThreadedBinarySearchTree-HW2/threadedBST.cpp':
+Name                                                                                 Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+operator<<(std::ostream&, ThreadedBST const&)                                              2       0 100.00%         8       0 100.00%         2       0 100.00%
+ThreadedBST::operator=(ThreadedBST const&)                                                 3       3   0.00%        10      10   0.00%         2       2   0.00%
+ThreadedBST::ThreadedBST(int)                                                              4       0 100.00%         8       0 100.00%         2       0 100.00%
+ThreadedBST::threadTree(Node*)                                                            13       5  61.54%        20       6  70.00%        10       4  60.00%
+ThreadedBST::buildSubTree(std::vector<int, std::allocator<int> > const&, int, int)         7       0 100.00%        11       0 100.00%         4       0 100.00%
+ThreadedBST::max(std::vector<int, std::allocator<int> >, int, int)                         6       0 100.00%        12       0 100.00%         4       1  75.00%
+ThreadedBST::newNode(int)                                                                  1       0 100.00%         8       0 100.00%         0       0   0.00%
+ThreadedBST::ThreadedBST(ThreadedBST const&)                                               1       0 100.00%         5       0 100.00%         0       0   0.00%
+ThreadedBST::~ThreadedBST()                                                                1       0 100.00%         1       0 100.00%         0       0   0.00%
+ThreadedBST::clear(Node*)                                                                  7       1  85.71%         9       2  77.78%         6       1  83.33%
+ThreadedBST::getEntry(int) const                                                          10       2  80.00%        14       3  78.57%         6       2  66.67%
+ThreadedBST::inorderTraversal() const                                                      5       0 100.00%        11       0 100.00%         4       0 100.00%
+ThreadedBST::remove(int)                                                                   4       0 100.00%        14       0 100.00%         4       0 100.00%
+ThreadedBST::findInOrderSuccessor(Node*) const                                             9       3  66.67%        11       4  63.64%         6       3  50.00%
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                     73      14  80.82%       142      25  82.39%        50      13  74.00%
+=====================================================
+The lines below were never executed
+=====================================================
+   10|      0|    new_tree.remove(i);
+   11|      0|  }
+   19|      0|ThreadedBST &ThreadedBST::operator=(const ThreadedBST &bst) {
+   20|      0|  if (&bst != this) {
+   21|      0|    clear(headPtr);
+   22|      0|  }
+   24|      0|  totalNodes = bst.totalNodes;
+   25|      0|  headPtr = buildSubTree(bst.inorderTraversal(), 0,
+   26|      0|                         static_cast<int>(bst.inorderTraversal().size() - 1));
+   27|      0|  threadTree(headPtr);
+   28|      0|  return *this;
+   29|      0|}
+   54|      0|    current_node = current_node->rightPtr;
+   55|      0|  }
+   68|      0|      current_node = current_node->leftPtr;
+   69|      0|    } else {
+   71|      0|      current_node = current_node->rightPtr;
+   72|      0|    }
+  144|      0|    clear(node->rightPtr);
+  145|      0|  }
+  160|      0|      pointer = pointer->rightPtr;
+  161|      0|    }
+  163|      0|  return nullptr;
+  210|      0|    while (pointer->leftPtr != nullptr)
+  211|      0|      pointer = pointer->leftPtr;
+  213|      0|    return pointer;
+  214|      0|  }
+Sat Oct 22 18:54:46 PDT 2022
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command

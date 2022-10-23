@@ -55,9 +55,6 @@ private:
   // clear helper function to recursively delete TBST
   void clear(Node *node);
 
-  // returns true if empty, false if not
-  bool isEmpty() const;
-
   // searchs Tree for a node with specified value
   // returns Node if found, nullptr if not found
   Node *getEntry(int n) const;

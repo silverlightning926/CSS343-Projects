@@ -163,9 +163,6 @@ Node *ThreadedBST::getEntry(int n) const {
   return nullptr;
 }
 
-// returns true if empty, false if not
-bool ThreadedBST::isEmpty() const { return (headPtr == nullptr); }
-
 // iterator to do inorder traversal of the tree
 std::vector<int> ThreadedBST::inorderTraversal() const {
   std::vector<int> inorder_tree;
