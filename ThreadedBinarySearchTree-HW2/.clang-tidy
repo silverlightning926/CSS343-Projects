@@ -48,6 +48,7 @@ Checks: >
   abseil-*,
   bugprone-*,
   google-*,
+  misc-*,
   modernize-*,
   performance-*,
   portability-*,
@@ -69,6 +70,7 @@ Checks: >
   -bugprone-narrowing-conversions,
   -bugprone-easily-swappable-parameters,
   -bugprone-implicit-widening-of-multiplication-result
+  -misc-no-recursion
 
 # Turn all the warnings from the checks above into errors.
 WarningsAsErrors: "*"
