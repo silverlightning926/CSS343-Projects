@@ -1,0 +1,519 @@
+Mon Oct 31 03:58:09 PDT 2022
+Linux csslab7 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+Original Graph:
+    A   C   B   
+    -   -   -   
+A | X   8   1   
+C | *   X   *   
+B | *   3   X   
+
+Amount Of Edges: 3
+Amount Of Vertices: 3
+
+Degrees Of Vertex A: 2
+
+Adding Vertex D:
+    A   C   B   D   
+    -   -   -   -   
+A | X   8   1   *   
+C | *   X   *   *   
+B | *   3   X   *   
+D | *   *   *   X   
+
+Connecting D to A With a Weight of 3:
+    A   C   B   D   
+    -   -   -   -   
+A | X   8   1   *   
+C | *   X   *   *   
+B | *   3   X   *   
+D | 3   *   *   X   
+
+Connecting D to E With a Weight of 7:
+    A   C   B   D   E   
+    -   -   -   -   -   
+A | X   8   1   *   *   
+C | *   X   *   *   *   
+B | *   3   X   *   *   
+D | 3   *   *   X   7   
+E | *   *   *   *   X   
+
+Disconnecting A and B:
+    A   C   B   D   E   
+    -   -   -   -   -   
+A | X   8   *   *   *   
+C | *   X   *   *   *   
+B | *   3   X   *   *   
+D | 3   *   *   X   7   
+E | *   *   *   *   X   
+
+Contains C: true
+
+Edges Of A (As String): C(8), 
+Edges Of D (As List): [ A, E, ]
+Edges Of D (As Map): 
+[ 
+	<Vertex: A, Weight: 3>,
+	<Vertex: E, Weight: 7>,
+]
+
+BFS Traversal From B: B, C, 
+DFS Traversal From A: A, C, 
+
+Original Graph:
+    A   B   C   D   E   F   G   H   X   Y   
+    -   -   -   -   -   -   -   -   -   -   
+A | X   1   *   *   *   *   *   3   *   *   
+B | *   X   1   *   *   *   *   *   *   *   
+C | *   *   X   1   *   *   *   *   *   *   
+D | *   *   *   X   1   *   *   *   *   *   
+E | *   *   *   *   X   1   *   *   *   *   
+F | *   *   *   *   *   X   1   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   
+H | *   *   *   *   *   *   1   X   *   *   
+X | *   *   *   *   *   *   *   *   X   10   
+Y | *   *   *   *   *   *   *   *   *   X   
+
+Amount Of Edges: 9
+Amount Of Vertices: 10
+
+Degrees Of Vertex A: 2
+
+Adding Vertex K:
+    A   B   C   D   E   F   G   H   X   Y   K   
+    -   -   -   -   -   -   -   -   -   -   -   
+A | X   1   *   *   *   *   *   3   *   *   *   
+B | *   X   1   *   *   *   *   *   *   *   *   
+C | *   *   X   1   *   *   *   *   *   *   *   
+D | *   *   *   X   1   *   *   *   *   *   *   
+E | *   *   *   *   X   1   *   *   *   *   *   
+F | *   *   *   *   *   X   1   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   *   
+H | *   *   *   *   *   *   1   X   *   *   *   
+X | *   *   *   *   *   *   *   *   X   10   *   
+Y | *   *   *   *   *   *   *   *   *   X   *   
+K | *   *   *   *   *   *   *   *   *   *   X   
+
+Connecting A to K With a Weight of 3:
+    A   B   C   D   E   F   G   H   X   Y   K   
+    -   -   -   -   -   -   -   -   -   -   -   
+A | X   1   *   *   *   *   *   3   *   *   3   
+B | *   X   1   *   *   *   *   *   *   *   *   
+C | *   *   X   1   *   *   *   *   *   *   *   
+D | *   *   *   X   1   *   *   *   *   *   *   
+E | *   *   *   *   X   1   *   *   *   *   *   
+F | *   *   *   *   *   X   1   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   *   
+H | *   *   *   *   *   *   1   X   *   *   *   
+X | *   *   *   *   *   *   *   *   X   10   *   
+Y | *   *   *   *   *   *   *   *   *   X   *   
+K | *   *   *   *   *   *   *   *   *   *   X   
+
+Disconnecting C and D:
+    A   B   C   D   E   F   G   H   X   Y   K   
+    -   -   -   -   -   -   -   -   -   -   -   
+A | X   1   *   *   *   *   *   3   *   *   3   
+B | *   X   1   *   *   *   *   *   *   *   *   
+C | *   *   X   *   *   *   *   *   *   *   *   
+D | *   *   *   X   1   *   *   *   *   *   *   
+E | *   *   *   *   X   1   *   *   *   *   *   
+F | *   *   *   *   *   X   1   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   *   
+H | *   *   *   *   *   *   1   X   *   *   *   
+X | *   *   *   *   *   *   *   *   X   10   *   
+Y | *   *   *   *   *   *   *   *   *   X   *   
+K | *   *   *   *   *   *   *   *   *   *   X   
+
+Contains C: true
+
+Edges Of A (As String): B(1), H(3), K(3), 
+Edges Of D (As List): [ E, ]
+Edges Of D (As Map): 
+[ 
+	<Vertex: E, Weight: 1>,
+]
+
+BFS Traversal From B: B, C, 
+DFS Traversal From A: A, B, C, H, G, K, 
+
+Original Graph:
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   0   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+B | *   X   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+C | *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+D | *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   
+E | *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+F | *   *   *   *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   
+H | *   *   *   *   *   *   *   X   *   *   *   *   0   *   *   *   *   *   *   *   *   
+I | *   *   *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   
+J | *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   
+K | *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   
+M | *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   
+N | *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   
+O | *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   5   2   *   *   *   *   
+P | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   2   *   *   *   
+Q | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   1   *   *   *   
+R | *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   *   *   X   3   *   *   
+S | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   X   2   3   
+T | *   *   *   *   *   *   *   *   *   *   *   *   *   *   8   *   *   *   *   X   *   
+U | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Amount Of Edges: 24
+Amount Of Vertices: 21
+
+Degrees Of Vertex A: 3
+
+Adding Vertex V:
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   0   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+B | *   X   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+C | *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+D | *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   
+E | *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+F | *   *   *   *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   
+H | *   *   *   *   *   *   *   X   *   *   *   *   0   *   *   *   *   *   *   *   *   *   
+I | *   *   *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   
+J | *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   
+K | *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   
+M | *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   
+N | *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   
+O | *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   5   2   *   *   *   *   *   
+P | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   2   *   *   *   *   
+Q | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   1   *   *   *   *   
+R | *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   *   *   X   3   *   *   *   
+S | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   X   2   3   *   
+T | *   *   *   *   *   *   *   *   *   *   *   *   *   *   8   *   *   *   *   X   *   *   
+U | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Connecting A to V With a Weight of 3:
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   0   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   3   
+B | *   X   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+C | *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+D | *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   
+E | *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+F | *   *   *   *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   
+H | *   *   *   *   *   *   *   X   *   *   *   *   0   *   *   *   *   *   *   *   *   *   
+I | *   *   *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   
+J | *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   
+K | *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   
+M | *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   
+N | *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   
+O | *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   5   2   *   *   *   *   *   
+P | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   2   *   *   *   *   
+Q | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   1   *   *   *   *   
+R | *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   *   *   X   3   *   *   *   
+S | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   X   2   3   *   
+T | *   *   *   *   *   *   *   *   *   *   *   *   *   *   8   *   *   *   *   X   *   *   
+U | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Disconnecting C and D:
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   0   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   3   
+B | *   X   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+C | *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+D | *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *   *   *   
+E | *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   
+F | *   *   *   *   *   X   *   *   *   0   *   *   *   *   *   *   *   *   *   *   *   *   
+G | *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   *   *   
+H | *   *   *   *   *   *   *   X   *   *   *   *   0   *   *   *   *   *   *   *   *   *   
+I | *   *   *   *   *   *   *   *   X   *   *   *   0   0   *   *   *   *   *   *   *   *   
+J | *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   *   
+K | *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   *   
+M | *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   *   
+N | *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   *   *   *   *   *   *   *   
+O | *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   5   2   *   *   *   *   *   
+P | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   2   *   *   *   *   
+Q | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   1   *   *   *   *   
+R | *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   *   *   X   3   *   *   *   
+S | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   1   X   2   3   *   
+T | *   *   *   *   *   *   *   *   *   *   *   *   *   *   8   *   *   *   *   X   *   *   
+U | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Contains C: true
+
+Edges Of A (As String): B(0), C(0), D(0), V(3), 
+Edges Of D (As List): [ H, I, ]
+Edges Of D (As Map): 
+[ 
+	<Vertex: H, Weight: 0>,
+	<Vertex: I, Weight: 0>,
+]
+
+BFS Traversal From B: B, E, F, J, 
+DFS Traversal From A: A, B, E, F, J, C, G, K, L, D, H, M, I, N, V, 
+
+Original Graph:
+    K   F   C   J   N   L   M   O   
+    -   -   -   -   -   -   -   -   
+K | X   0   *   *   0   *   *   *   
+F | *   X   0   0   *   *   *   *   
+C | *   *   X   *   *   *   *   *   
+J | *   *   *   X   *   *   *   *   
+N | *   *   *   *   X   0   *   0   
+L | *   *   *   *   *   X   0   *   
+M | *   *   *   *   *   *   X   *   
+O | *   *   *   *   *   *   *   X   
+
+Amount Of Edges: 7
+Amount Of Vertices: 8
+
+Degrees Of Vertex A: -1
+
+Adding Vertex V:
+    K   F   C   J   N   L   M   O   V   
+    -   -   -   -   -   -   -   -   -   
+K | X   0   *   *   0   *   *   *   *   
+F | *   X   0   0   *   *   *   *   *   
+C | *   *   X   *   *   *   *   *   *   
+J | *   *   *   X   *   *   *   *   *   
+N | *   *   *   *   X   0   *   0   *   
+L | *   *   *   *   *   X   0   *   *   
+M | *   *   *   *   *   *   X   *   *   
+O | *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   X   
+
+Connecting A to V With a Weight of 3:
+    K   F   C   J   N   L   M   O   V   A   
+    -   -   -   -   -   -   -   -   -   -   
+K | X   0   *   *   0   *   *   *   *   *   
+F | *   X   0   0   *   *   *   *   *   *   
+C | *   *   X   *   *   *   *   *   *   *   
+J | *   *   *   X   *   *   *   *   *   *   
+N | *   *   *   *   X   0   *   0   *   *   
+L | *   *   *   *   *   X   0   *   *   *   
+M | *   *   *   *   *   *   X   *   *   *   
+O | *   *   *   *   *   *   *   X   *   *   
+V | *   *   *   *   *   *   *   *   X   *   
+A | *   *   *   *   *   *   *   *   3   X   
+
+Disconnecting C and D:
+    K   F   C   J   N   L   M   O   V   A   
+    -   -   -   -   -   -   -   -   -   -   
+K | X   0   *   *   0   *   *   *   *   *   
+F | *   X   0   0   *   *   *   *   *   *   
+C | *   *   X   *   *   *   *   *   *   *   
+J | *   *   *   X   *   *   *   *   *   *   
+N | *   *   *   *   X   0   *   0   *   *   
+L | *   *   *   *   *   X   0   *   *   *   
+M | *   *   *   *   *   *   X   *   *   *   
+O | *   *   *   *   *   *   *   X   *   *   
+V | *   *   *   *   *   *   *   *   X   *   
+A | *   *   *   *   *   *   *   *   3   X   
+
+Contains C: true
+
+Edges Of A (As String): V(3), 
+Edges Of D (As List): [ ]
+Edges Of D (As Map): 
+[ 
+]
+
+BFS Traversal From B: B, 
+DFS Traversal From A: A, V, 
+
+Original Graph:
+    A   B   E   F   H   D   C   K   L   G   I   J   
+    -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   6   2   2   8   *   *   *   *   *   *   *   
+B | *   X   1   *   5   9   *   *   *   *   *   *   
+E | *   *   X   *   *   *   *   *   *   1   1   3   
+F | *   *   *   X   *   *   *   *   *   6   *   *   
+H | *   *   *   *   X   *   *   *   3   *   *   *   
+D | *   *   *   *   *   X   *   1   *   *   *   *   
+C | *   *   *   *   *   *   X   4   3   *   *   *   
+K | *   *   *   *   *   *   *   X   *   *   *   *   
+L | *   *   *   *   *   *   *   *   X   *   *   *   
+G | *   *   *   *   *   *   *   *   *   X   *   *   
+I | *   *   *   *   *   *   *   1   *   *   X   3   
+J | *   *   *   *   *   *   *   *   *   *   *   X   
+
+Amount Of Edges: 17
+Amount Of Vertices: 12
+
+Degrees Of Vertex A: 4
+
+Adding Vertex V:
+    A   B   E   F   H   D   C   K   L   G   I   J   V   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   6   2   2   8   *   *   *   *   *   *   *   *   
+B | *   X   1   *   5   9   *   *   *   *   *   *   *   
+E | *   *   X   *   *   *   *   *   *   1   1   3   *   
+F | *   *   *   X   *   *   *   *   *   6   *   *   *   
+H | *   *   *   *   X   *   *   *   3   *   *   *   *   
+D | *   *   *   *   *   X   *   1   *   *   *   *   *   
+C | *   *   *   *   *   *   X   4   3   *   *   *   *   
+K | *   *   *   *   *   *   *   X   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   X   *   *   *   *   
+G | *   *   *   *   *   *   *   *   *   X   *   *   *   
+I | *   *   *   *   *   *   *   1   *   *   X   3   *   
+J | *   *   *   *   *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Connecting A to V With a Weight of 3:
+    A   B   E   F   H   D   C   K   L   G   I   J   V   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   6   2   2   8   *   *   *   *   *   *   *   3   
+B | *   X   1   *   5   9   *   *   *   *   *   *   *   
+E | *   *   X   *   *   *   *   *   *   1   1   3   *   
+F | *   *   *   X   *   *   *   *   *   6   *   *   *   
+H | *   *   *   *   X   *   *   *   3   *   *   *   *   
+D | *   *   *   *   *   X   *   1   *   *   *   *   *   
+C | *   *   *   *   *   *   X   4   3   *   *   *   *   
+K | *   *   *   *   *   *   *   X   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   X   *   *   *   *   
+G | *   *   *   *   *   *   *   *   *   X   *   *   *   
+I | *   *   *   *   *   *   *   1   *   *   X   3   *   
+J | *   *   *   *   *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Disconnecting C and D:
+    A   B   E   F   H   D   C   K   L   G   I   J   V   
+    -   -   -   -   -   -   -   -   -   -   -   -   -   
+A | X   6   2   2   8   *   *   *   *   *   *   *   3   
+B | *   X   1   *   5   9   *   *   *   *   *   *   *   
+E | *   *   X   *   *   *   *   *   *   1   1   3   *   
+F | *   *   *   X   *   *   *   *   *   6   *   *   *   
+H | *   *   *   *   X   *   *   *   3   *   *   *   *   
+D | *   *   *   *   *   X   *   1   *   *   *   *   *   
+C | *   *   *   *   *   *   X   4   3   *   *   *   *   
+K | *   *   *   *   *   *   *   X   *   *   *   *   *   
+L | *   *   *   *   *   *   *   *   X   *   *   *   *   
+G | *   *   *   *   *   *   *   *   *   X   *   *   *   
+I | *   *   *   *   *   *   *   1   *   *   X   3   *   
+J | *   *   *   *   *   *   *   *   *   *   *   X   *   
+V | *   *   *   *   *   *   *   *   *   *   *   *   X   
+
+Contains C: true
+
+Edges Of A (As String): B(6), E(2), F(2), H(8), V(3), 
+Edges Of D (As List): [ K, ]
+Edges Of D (As Map): 
+[ 
+	<Vertex: K, Weight: 1>,
+]
+
+BFS Traversal From B: B, E, H, D, G, I, J, L, K, 
+DFS Traversal From A: A, B, E, G, I, K, J, H, L, D, F, V, 
+
+Connecting A to A: false
+Disconnecting A and A: false
+Disconnecting F and G: false
+Contains L: false
+L, L, Adding Vertex A: false
+Failed to open ./nonExistentFile.txt
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+18241 warnings generated.
+32772 warnings generated.
+Suppressed 32772 warnings (32772 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./graph.cpp
+Running clang-format on ./main.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==885040== Memcheck, a memory error detector
+==885040== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==885040== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==885040== Command: ./a.out
+==885040== Parent PID: 884969
+==885040== 
+==885040== 
+==885040== HEAP SUMMARY:
+==885040==     in use at exit: 0 bytes in 0 blocks
+==885040==   total heap usage: 597 allocs, 597 frees, 164,307 bytes allocated
+==885040== 
+==885040== All heap blocks were freed -- no leaks are possible
+==885040== 
+==885040== For lists of detected and suppressed errors, rerun with: -s
+==885040== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+File '/home/NETID/siddrao/CSS343Projects/Graph-HW3/graph.cpp':
+Name                                                                                                                                                                                                                                                                                                                                                                                                           Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+operator<<(std::ostream&, Graph const&)                                                                                                                                                                                                                                                                                                                                                                             17       0 100.00%        24       0 100.00%        12       0 100.00%
+Graph::readFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                                                                                                                                              7       0 100.00%        18       0 100.00%         4       0 100.00%
+Graph::connect(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)                                                                                                                                                                                                                 19       0 100.00%        38       0 100.00%        20       0 100.00%
+Graph::verticesSize() const                                                                                                                                                                                                                                                                                                                                                                                          1       0 100.00%         1       0 100.00%         0       0   0.00%
+Graph::edgesSize() const                                                                                                                                                                                                                                                                                                                                                                                             5       0 100.00%        10       0 100.00%         6       0 100.00%
+Graph::vertexDegree(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const                                                                                                                                                                                                                                                                                                   12       0 100.00%        15       0 100.00%        10       0 100.00%
+Graph::getEdgesAsString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const                                                                                                                                                                                                                                                                                               14       1  92.86%        16       1  93.75%        10       1  90.00%
+Graph::getEdgesAsList(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const                                                                                                                                                                                                                                                                                                 14       0 100.00%        15       0 100.00%        10       0 100.00%
+Graph::getEdgesAsMap(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const                                                                                                                                                                                                                                                                                                  14       0 100.00%        16       0 100.00%        10       0 100.00%
+Graph::dfs(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&))                                                                                                                                                                                                                 1       0 100.00%         4       0 100.00%         0       0   0.00%
+Graph::dfsHelper(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&), std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)         7       0 100.00%        14       0 100.00%         8       0 100.00%
+Graph::bfs(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)) const                                                                                                                                                                                                           9       0 100.00%        22       0 100.00%        10       0 100.00%
+Graph::contains(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const                                                                                                                                                                                                                                                                                                        1       0 100.00%         3       0 100.00%         0       0   0.00%
+Graph::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                                                                                                                                                   6       0 100.00%        14       0 100.00%         6       0 100.00%
+Graph::disconnect(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                                                   16       0 100.00%        16       0 100.00%        12       0 100.00%
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                                                                                                                                                                                                                                                                                                              143       1  99.30%       226       1  99.56%       118       1  99.15%
+
+File '/home/NETID/siddrao/CSS343Projects/Graph-HW3/main.cpp':
+Name                                                                                                                                                                                                                                                                                                                                                                                                           Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+printVertex(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                                                                                                                                                  1       0 100.00%         1       0 100.00%         0       0   0.00%
+testGraph0()                                                                                                                                                                                                                                                                                                                                                                                                         6       1  83.33%        45       2  95.56%         6       1  83.33%
+testGraph1()                                                                                                                                                                                                                                                                                                                                                                                                         6       1  83.33%        42       2  95.24%         6       1  83.33%
+testGraph2()                                                                                                                                                                                                                                                                                                                                                                                                         6       1  83.33%        42       2  95.24%         6       1  83.33%
+testGraph3()                                                                                                                                                                                                                                                                                                                                                                                                         6       3  50.00%        42       5  88.10%         6       3  50.00%
+testGraph4()                                                                                                                                                                                                                                                                                                                                                                                                         6       1  83.33%        42       2  95.24%         6       1  83.33%
+additionalTests()                                                                                                                                                                                                                                                                                                                                                                                                    6       1  83.33%        22       2  90.91%         4       2  50.00%
+main                                                                                                                                                                                                                                                                                                                                                                                                                 1       0 100.00%         9       0 100.00%         0       0   0.00%
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                                                                                                                                                                                                                                                                                                               38       8  78.95%       245      15  93.88%        34       9  73.53%
+=====================================================
+The lines below were never executed
+=====================================================
+  165|      0|    return "";
+   11|      0|    return;
+   12|      0|  }
+   70|      0|    return;
+   71|      0|  }
+  125|      0|    return;
+  126|      0|  }
+  180|      0|    return;
+  181|      0|  }
+  212|      0|    std::cout << edge << ", ";
+  218|      0|    std::cout << "\t<Vertex: " << edge.first << ", Weight: " << edge.second
+  219|      0|              << ">," << std::endl;
+  235|      0|    return;
+  236|      0|  }
+  290|      0|    return;
+  291|      0|  }
+Mon Oct 31 03:58:20 PDT 2022
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
