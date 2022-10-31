@@ -11,6 +11,16 @@
 
 class Graph {
 public:
+  Graph() = default;
+
+  Graph(const Graph &other) = delete;
+
+  Graph(Graph &&other) = delete;
+
+  Graph &operator=(const Graph &other) = delete;
+
+  Graph &operator=(Graph &&other) = delete;
+
   friend std::ostream &operator<<(std::ostream &out, const Graph &graph);
 
   bool readFile(const std::string &filePath);

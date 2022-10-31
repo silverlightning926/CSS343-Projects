@@ -1,4 +1,4 @@
-Mon Oct 31 03:58:09 PDT 2022
+Mon Oct 31 04:11:39 PDT 2022
 Linux csslab7 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access)
 =====================================================
@@ -440,21 +440,21 @@ Running clang-format on ./main.cpp
 =====================================================
 6. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
-==885040== Memcheck, a memory error detector
-==885040== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==885040== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==885040== Command: ./a.out
-==885040== Parent PID: 884969
-==885040== 
-==885040== 
-==885040== HEAP SUMMARY:
-==885040==     in use at exit: 0 bytes in 0 blocks
-==885040==   total heap usage: 597 allocs, 597 frees, 164,307 bytes allocated
-==885040== 
-==885040== All heap blocks were freed -- no leaks are possible
-==885040== 
-==885040== For lists of detected and suppressed errors, rerun with: -s
-==885040== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==886185== Memcheck, a memory error detector
+==886185== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==886185== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==886185== Command: ./a.out
+==886185== Parent PID: 886099
+==886185== 
+==886185== 
+==886185== HEAP SUMMARY:
+==886185==     in use at exit: 0 bytes in 0 blocks
+==886185==   total heap usage: 597 allocs, 597 frees, 164,307 bytes allocated
+==886185== 
+==886185== All heap blocks were freed -- no leaks are possible
+==886185== 
+==886185== For lists of detected and suppressed errors, rerun with: -s
+==886185== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
 7. Tests have full code coverage
 =====================================================
@@ -511,7 +511,7 @@ The lines below were never executed
   236|      0|  }
   290|      0|    return;
   291|      0|  }
-Mon Oct 31 03:58:20 PDT 2022
+Mon Oct 31 04:11:50 PDT 2022
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command
