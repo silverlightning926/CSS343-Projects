@@ -118,13 +118,16 @@ void InventoryManager::newCommand(const std::string& command) {
 
         else if(command[9] == 'F')
         {
-            for (Comedy &comedy: comedyInventory_) {
+            bool found = false;
 
+            for (Comedy &comedy: comedyInventory_) {
                 if(comedy.getTitle() == command.substr(11, command.length() - 17)
                 && comedy.getReleaseYear() == std::stoi(command.substr(command.length()-4, 4)))
                 {
+                    found = true;
                     if(command[0] == 'B')
                     {
+
                         comedy.setStock(comedy.getStock()-1);
                         customer.borrowMovie(comedy);
                     }
@@ -136,15 +139,24 @@ void InventoryManager::newCommand(const std::string& command) {
                     }
                 }
             }
+
+            if(!found)
+            {
+                std::cout << "Error In Command (Command Discarded): " << command << std::endl;
+            }
         }
 
         else if(command[9] == 'D')
         {
+            bool found = false;
+
             for (Drama &drama: dramaInventory_) {
 
                 if(drama.getTitle() == command.substr(command.find(", ")+ 2, command.length() - command.find(',') - 3)
                    && drama.getDirector() == command.substr(11, command.find(',') - 11))
                 {
+                    found = true;
+
                     if(command[0] == 'B')
                     {
                         drama.setStock(drama.getStock()-1);
@@ -158,15 +170,24 @@ void InventoryManager::newCommand(const std::string& command) {
                     }
                 }
             }
+
+            if(!found)
+            {
+                std::cout << "Error In Command (Command Discarded): " << command << std::endl;
+            }
         }
 
         else if(command[9] == 'C')
         {
 
+            bool found = false;
+
             for (Classic &classic: classicInventory_) {
                 if(classic.getReleaseYear() == std::stoi(command.substr(13, 4))
                    && classic.getMajorActor() == command.substr(18))
                 {
+                    found = true;
+
                     if(command[0] == 'B')
                     {
                         classic.setStock(classic.getStock()-1);
@@ -180,6 +201,20 @@ void InventoryManager::newCommand(const std::string& command) {
                     }
                 }
             }
+
+            if(!found)
+            {
+                std::cout << "Error In Command (Command Discarded): " << command << std::endl;
+            }
         }
+
+        else {
+            std::cout << "Error In Command (Command Discarded): " << command << std::endl;
+        }
+    }
+
+    else
+    {
+        std::cout << "Error In Command (Command Discarded): " << command << std::endl;
     }
 }
