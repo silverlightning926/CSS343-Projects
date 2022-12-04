@@ -5,40 +5,40 @@
 #ifndef MOVIESP5_INVENTORYMANAGER_H
 #define MOVIESP5_INVENTORYMANAGER_H
 
-#include <string>
-#include <vector>
-#include <unordered_map>
-#include "Comedy.h"
-#include "Drama.h"
 #include "Classic.h"
+#include "Comedy.h"
 #include "Customer.h"
+#include "Drama.h"
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 class InventoryManager {
 public:
-    InventoryManager() = default;
+  InventoryManager() = default;
 
-    InventoryManager(const InventoryManager &other) = delete;
-    InventoryManager(InventoryManager &&other) = delete;
+  InventoryManager(const InventoryManager &other) = delete;
+  InventoryManager(InventoryManager &&other) = delete;
 
-    InventoryManager &operator=(const InventoryManager &other) = delete;
-    InventoryManager &operator=(InventoryManager &&other) = delete;
+  InventoryManager &operator=(const InventoryManager &other) = delete;
+  InventoryManager &operator=(InventoryManager &&other) = delete;
 
-    void readFile(const std::string& filePath);
+  void readFile(const std::string &filePath);
 
 private:
-    std::unordered_map<std::string, Customer> customers_;
+  std::unordered_map<std::string, Customer> customers_;
 
-    std::vector<Comedy> comedyInventory_;
-    std::vector<Drama> dramaInventory_;
-    std::vector<Classic> classicInventory_;
+  std::vector<Comedy> comedyInventory_;
+  std::vector<Drama> dramaInventory_;
+  std::vector<Classic> classicInventory_;
 
-    void newMovie(std::vector<std::string> parsedCommand);
-    void newCustomer(std::vector<std::string> parsedCommand);
+  void newMovie(std::vector<std::string> parsedCommand);
+  void newCustomer(std::vector<std::string> parsedCommand);
 
-    void newCommand(const std::string& command);
+  void newCommand(const std::string &command);
 
-    static std::vector<std::string> splitString(const std::string &delimiter, const std::string& referenceLine) ;
+  static std::vector<std::string> splitString(const std::string &delimiter,
+                                              const std::string &referenceLine);
 };
 
-
-#endif //MOVIESP5_INVENTORYMANAGER_H
+#endif // MOVIESP5_INVENTORYMANAGER_H

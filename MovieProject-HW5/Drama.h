@@ -5,23 +5,22 @@
 #ifndef MOVIESP5_DRAMA_H
 #define MOVIESP5_DRAMA_H
 
-
-#include <string>
 #include "Movie.h"
+#include <string>
 
-class Drama: public Movie {
+class Drama : public Movie {
 private:
-    int releaseYear;
+  int releaseYear;
 
 public:
-    friend std::ostream &operator<<(std::ostream &out, const Drama &drama);
+  friend std::ostream &operator<<(std::ostream &out, const Drama &drama);
 
-    Drama(int stock, const std::string& director, const std::string& title, int releaseYear);
+  Drama(int stock, const std::string &director, const std::string &title,
+        int releaseYear);
 
-    int getReleaseYear() const;
+  int getReleaseYear() const;
 
-    void setReleaseYear(int newReleaseYear);
+  void setReleaseYear(int newReleaseYear);
 };
 
-
-#endif //MOVIESP5_DRAMA_H
+#endif // MOVIESP5_DRAMA_H

@@ -5,31 +5,31 @@
 #ifndef MOVIESP5_CLASSIC_H
 #define MOVIESP5_CLASSIC_H
 
-
 #include "Movie.h"
 
 class Classic : public Movie {
 private:
-    int releaseYear;
-    int releaseMonth;
-    std::string majorActor;
+  int releaseYear;
+  int releaseMonth;
+  std::string majorActor;
+
 public:
-    friend std::ostream &operator<<(std::ostream &out, const Classic &drama);
+  friend std::ostream &operator<<(std::ostream &out, const Classic &classic);
 
-    Classic(int stock, const std::string& director, const std::string& title, std::string  majorActor, int releaseMonth, int releaseYear);
+  Classic(int stock, const std::string &director, const std::string &title,
+          std::string majorActor, int releaseMonth, int releaseYear);
 
-    int getReleaseYear() const;
+  int getReleaseYear() const;
 
-    void setReleaseYear(int newReleaseYear);
+  void setReleaseYear(int newReleaseYear);
 
-    int getReleaseMonth() const;
+  int getReleaseMonth() const;
 
-    void setReleaseMonth(int newReleaseMonth);
+  void setReleaseMonth(int newReleaseMonth);
 
-    const std::string &getMajorActor() const;
+  const std::string &getMajorActor() const;
 
-    void setMajorActor(const std::string &newMajorActor);
+  void setMajorActor(const std::string &newMajorActor);
 };
 
-
-#endif //MOVIESP5_CLASSIC_H
+#endif // MOVIESP5_CLASSIC_H
