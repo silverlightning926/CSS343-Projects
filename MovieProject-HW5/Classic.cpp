@@ -8,21 +8,9 @@
 
 int Classic::getReleaseYear() const { return releaseYear; }
 
-void Classic::setReleaseYear(int newReleaseYear) {
-  Classic::releaseYear = newReleaseYear;
-}
-
 int Classic::getReleaseMonth() const { return releaseMonth; }
 
-void Classic::setReleaseMonth(int newReleaseMonth) {
-  Classic::releaseMonth = newReleaseMonth;
-}
-
 const std::string &Classic::getMajorActor() const { return majorActor; }
-
-void Classic::setMajorActor(const std::string &newMajorActor) {
-  Classic::majorActor = newMajorActor;
-}
 
 Classic::Classic(int stock, const std::string &director,
                  const std::string &title, std::string majorActor,

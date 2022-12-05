@@ -37,9 +37,3 @@ void Customer::history() {
               << pair.first.getDirector() << std::endl;
   }
 }
-
-std::ostream &operator<<(std::ostream &out, const Customer &customer) {
-  out << customer.firstName_ << " " << customer.lastName_ << " - "
-      << customer.customerID_;
-  return out;
-}

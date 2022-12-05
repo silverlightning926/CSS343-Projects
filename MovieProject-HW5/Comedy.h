@@ -19,8 +19,6 @@ public:
          int releaseYear);
 
   int getReleaseYear() const;
-
-  void setReleaseYear(int newReleaseYear);
 };
 
 #endif // MOVIESP5_COMEDY_H

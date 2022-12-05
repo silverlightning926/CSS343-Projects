@@ -12,7 +12,6 @@
 class Customer {
 
 public:
-  friend std::ostream &operator<<(std::ostream &out, const Customer &customer);
 
   Customer(std::string firstName, std::string lastName, std::string customerID);
 

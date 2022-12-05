@@ -21,15 +21,9 @@ public:
 
   int getReleaseYear() const;
 
-  void setReleaseYear(int newReleaseYear);
-
   int getReleaseMonth() const;
 
-  void setReleaseMonth(int newReleaseMonth);
-
   const std::string &getMajorActor() const;
-
-  void setMajorActor(const std::string &newMajorActor);
 };
 
 #endif // MOVIESP5_CLASSIC_H

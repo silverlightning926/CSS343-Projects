@@ -15,10 +15,6 @@ Drama::Drama(int stock, const std::string &director, const std::string &title,
 
 int Drama::getReleaseYear() const { return releaseYear; }
 
-void Drama::setReleaseYear(int newReleaseYear) {
-  Drama::releaseYear = newReleaseYear;
-}
-
 std::ostream &operator<<(std::ostream &out, const Drama &drama) {
   out << "Drama (D): " << drama.getTitle() << " by " << drama.getDirector()
       << " - " << drama.getReleaseYear() << " [" << drama.getStock() << "]";
