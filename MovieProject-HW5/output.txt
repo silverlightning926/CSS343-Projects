@@ -1,4 +1,4 @@
-Sun Dec  4 18:44:31 PST 2022
+Sun Dec  4 19:50:26 PST 2022
 Linux csslab7 4.18.0-372.32.1.el8_6.x86_64 #1 SMP Thu Oct 27 15:18:36 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access)
 =====================================================
@@ -9,40 +9,40 @@ uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(l
 =====================================================
 Current Inventory:
 	Comedy Inventory:
-		COMEDY (F): Sleepless in Seattle by Nora Ephron - 1993 [10]
 		COMEDY (F): Annie Hall by Woody Allen - 1977 [10]
-		COMEDY (F): When Harry Met Sally by Rob Reiner - 1989 [10]
-		COMEDY (F): Pirates of the Caribbean by Gore Verbinski - 2003 [10]
-		COMEDY (F): Pirates of the Caribbean by Different Years - 2000 [10]
 		COMEDY (F): Fargo by Joel Coen - 1996 [10]
-		COMEDY (F): National Lampoon's Animal House by John Landis - 1978 [10]
-		COMEDY (F): You've Got Mail by Nora Ephron - 1998 [10]
 		COMEDY (F): Helluva Time by Mary Cary - 2020 [10]
+		COMEDY (F): National Lampoon's Animal House by John Landis - 1978 [10]
+		COMEDY (F): Pirates of the Caribbean by Different Years - 2000 [10]
+		COMEDY (F): Pirates of the Caribbean by Gore Verbinski - 2003 [10]
+		COMEDY (F): Sleepless in Seattle by Nora Ephron - 1993 [10]
+		COMEDY (F): When Harry Met Sally by Rob Reiner - 1989 [10]
+		COMEDY (F): You've Got Mail by Nora Ephron - 1998 [10]
 	Drama Inventory:
 		Drama (D): Good Morning Vietnam by Barry Levinson - 1988 [10]
 		Drama (D): Same Director Good Morning Vietnam by Barry Levinson - 1988 [10]
-		Drama (D): Good Will Hunting by Gus Van Sant - 2000 [10]
-		Drama (D): King of Hearts by Phillippe De Broca - 1967 [10]
-		Drama (D): Schindler's List by Steven Spielberg - 1993 [10]
-		Drama (D): Silence of the Lambs by Jonathan Demme - 1991 [10]
 		Drama (D): Unforgiven by Clint Eastwood - 1992 [10]
+		Drama (D): Good Will Hunting by Gus Van Sant - 2000 [10]
+		Drama (D): Silence of the Lambs by Jonathan Demme - 1991 [10]
 		Drama (D): Dogfight by Nancy Savoca - 1991 [10]
+		Drama (D): King of Hearts by Phillippe De Broca - 1967 [10]
 		Drama (D): CatBattle by Remen Cremen - 1898 [10]
+		Drama (D): Schindler's List by Steven Spielberg - 1993 [10]
 	Comedy Inventory:
-		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
-		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
+		Classic (C): Holiday by George Cukor - 9 / 1938 [10]
+		Classic (C): Holiday by George Cukor - 9 / 1938 [10]
+		Classic (C): Gone With the Wind by Victor Fleming - 2 / 1939 [10]
+		Classic (C): Gone With the Wind by Victor Fleming - 2 / 1939 [10]
 		Classic (C): The Wizard of Oz by Victor Fleming - 7 / 1939 [10]
-		Classic (C): Harold and Maude by Hal Ashby - 3 / 1971 [10]
-		Classic (C): Holiday by George Cukor - 9 / 1938 [10]
-		Classic (C): Holiday by George Cukor - 9 / 1938 [10]
-		Classic (C): Gone With the Wind by Victor Fleming - 2 / 1939 [10]
-		Classic (C): Gone With the Wind by Victor Fleming - 2 / 1939 [10]
 		Classic (C): The Philadelphia Story by George Cukor - 5 / 1940 [10]
 		Classic (C): The Philadelphia Story by George Cukor - 5 / 1940 [10]
 		Classic (C): The Maltese Falcon by John Huston - 10 / 1941 [10]
+		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
+		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
 		Classic (C): It's a Wonderful Life by Frank Capra - 11 / 1946 [10]
 		Classic (C): It's a Wonderful Life by Frank Capra - 11 / 1946 [10]
 		Classic (C): A Clockwork Orange by Stanley Kubrick - 2 / 1971 [10]
+		Classic (C): Harold and Maude by Hal Ashby - 3 / 1971 [10]
 
 History For Customer 1000 - Minnie Mouse
 
@@ -51,6 +51,7 @@ History For Customer 5000 - Freddie Frog
 History For Customer 8000 - Wally Wacky
 
 Error In Command (Command Discarded): B 1111 D Z 2 1971 Malcolm McDowell
+Error In Command (Command Discarded): R 5000 D C 3 1971 Fake Movie
 Error In Command (Command Discarded): B 1234 D C 2 1971 Malcolm McDowell
 Error In Command (Command Discarded): B 1000 D F Bogus Title, 2001
 Unable To Borrow Movie: Classic (C): Harold and Maude by Hal Ashby - 3 / 1971 [0]
@@ -59,40 +60,40 @@ Unable To Borrow Movie: Classic (C): Harold and Maude by Hal Ashby - 3 / 1971 [0
 Error In Command (Command Discarded): B 1000 D D Steven Spielberg, Bogus Title,
 Current Inventory:
 	Comedy Inventory:
-		COMEDY (F): Sleepless in Seattle by Nora Ephron - 1993 [9]
 		COMEDY (F): Annie Hall by Woody Allen - 1977 [9]
-		COMEDY (F): When Harry Met Sally by Rob Reiner - 1989 [9]
-		COMEDY (F): Pirates of the Caribbean by Gore Verbinski - 2003 [10]
-		COMEDY (F): Pirates of the Caribbean by Different Years - 2000 [10]
 		COMEDY (F): Fargo by Joel Coen - 1996 [8]
-		COMEDY (F): National Lampoon's Animal House by John Landis - 1978 [9]
-		COMEDY (F): You've Got Mail by Nora Ephron - 1998 [9]
 		COMEDY (F): Helluva Time by Mary Cary - 2020 [10]
+		COMEDY (F): National Lampoon's Animal House by John Landis - 1978 [9]
+		COMEDY (F): Pirates of the Caribbean by Different Years - 2000 [10]
+		COMEDY (F): Pirates of the Caribbean by Gore Verbinski - 2003 [10]
+		COMEDY (F): Sleepless in Seattle by Nora Ephron - 1993 [9]
+		COMEDY (F): When Harry Met Sally by Rob Reiner - 1989 [9]
+		COMEDY (F): You've Got Mail by Nora Ephron - 1998 [9]
 	Drama Inventory:
 		Drama (D): Good Morning Vietnam by Barry Levinson - 1988 [9]
 		Drama (D): Same Director Good Morning Vietnam by Barry Levinson - 1988 [10]
-		Drama (D): Good Will Hunting by Gus Van Sant - 2000 [9]
-		Drama (D): King of Hearts by Phillippe De Broca - 1967 [9]
-		Drama (D): Schindler's List by Steven Spielberg - 1993 [9]
-		Drama (D): Silence of the Lambs by Jonathan Demme - 1991 [9]
 		Drama (D): Unforgiven by Clint Eastwood - 1992 [9]
+		Drama (D): Good Will Hunting by Gus Van Sant - 2000 [9]
+		Drama (D): Silence of the Lambs by Jonathan Demme - 1991 [9]
 		Drama (D): Dogfight by Nancy Savoca - 1991 [8]
+		Drama (D): King of Hearts by Phillippe De Broca - 1967 [9]
 		Drama (D): CatBattle by Remen Cremen - 1898 [10]
+		Drama (D): Schindler's List by Steven Spielberg - 1993 [9]
 	Comedy Inventory:
-		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
-		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
-		Classic (C): The Wizard of Oz by Victor Fleming - 7 / 1939 [10]
-		Classic (C): Harold and Maude by Hal Ashby - 3 / 1971 [0]
-		Classic (C): Holiday by George Cukor - 9 / 1938 [10]
 		Classic (C): Holiday by George Cukor - 9 / 1938 [9]
+		Classic (C): Holiday by George Cukor - 9 / 1938 [10]
 		Classic (C): Gone With the Wind by Victor Fleming - 2 / 1939 [10]
 		Classic (C): Gone With the Wind by Victor Fleming - 2 / 1939 [10]
+		Classic (C): The Wizard of Oz by Victor Fleming - 7 / 1939 [10]
 		Classic (C): The Philadelphia Story by George Cukor - 5 / 1940 [9]
 		Classic (C): The Philadelphia Story by George Cukor - 5 / 1940 [9]
 		Classic (C): The Maltese Falcon by John Huston - 10 / 1941 [9]
+		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
+		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
 		Classic (C): It's a Wonderful Life by Frank Capra - 11 / 1946 [10]
 		Classic (C): It's a Wonderful Life by Frank Capra - 11 / 1946 [10]
 		Classic (C): A Clockwork Orange by Stanley Kubrick - 2 / 1971 [9]
+		Classic (C): Harold and Maude by Hal Ashby - 3 / 1971 [0]
 
 History For Customer 1000 - Minnie Mouse
 	B | Good Morning Vietnam by Barry Levinson
@@ -135,13 +136,13 @@ Could not open file: ./invalid.txt
 =====================================================
 3. clang-tidy warnings are fixed
 =====================================================
-11148 warnings generated.
-22294 warnings generated.
-61367 warnings generated.
-72513 warnings generated.
-90790 warnings generated.
-106339 warnings generated.
-Suppressed 106339 warnings (106339 in non-user code).
+11149 warnings generated.
+22296 warnings generated.
+61369 warnings generated.
+72516 warnings generated.
+90807 warnings generated.
+106356 warnings generated.
+Suppressed 106356 warnings (106356 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
 =====================================================
 4. clang-format does not find any formatting issues
@@ -158,21 +159,21 @@ Running clang-format on ./main.cpp
 =====================================================
 6. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
-==74358== Memcheck, a memory error detector
-==74358== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==74358== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==74358== Command: ./a.out
-==74358== Parent PID: 74210
-==74358== 
-==74358== 
-==74358== HEAP SUMMARY:
-==74358==     in use at exit: 0 bytes in 0 blocks
-==74358==   total heap usage: 646 allocs, 646 frees, 164,042 bytes allocated
-==74358== 
-==74358== All heap blocks were freed -- no leaks are possible
-==74358== 
-==74358== For lists of detected and suppressed errors, rerun with: -s
-==74358== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==79261== Memcheck, a memory error detector
+==79261== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==79261== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==79261== Command: ./a.out
+==79261== Parent PID: 79123
+==79261== 
+==79261== 
+==79261== HEAP SUMMARY:
+==79261==     in use at exit: 0 bytes in 0 blocks
+==79261==   total heap usage: 646 allocs, 646 frees, 164,042 bytes allocated
+==79261== 
+==79261== All heap blocks were freed -- no leaks are possible
+==79261== 
+==79261== For lists of detected and suppressed errors, rerun with: -s
+==79261== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
 7. Tests have full code coverage
 =====================================================
@@ -184,8 +185,9 @@ Classic::getReleaseMonth() const                                                
 Classic::getMajorActor[abi:cxx11]() const                                                                                                                                                                                                                                                                1       0 100.00%         1       0 100.00%         0       0   0.00%
 Classic::Classic(int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int)         1       0 100.00%         5       0 100.00%         0       0   0.00%
 operator<<(std::ostream&, Classic const&)                                                                                                                                                                                                                                                                1       0 100.00%         6       0 100.00%         0       0   0.00%
+Classic::operator<(Classic const&) const                                                                                                                                                                                                                                                                 7       0 100.00%         9       0 100.00%         4       0 100.00%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                    5       0 100.00%        14       0 100.00%         0       0   0.00%
+TOTAL                                                                                                                                                                                                                                                                                                   12       0 100.00%        23       0 100.00%         4       0 100.00%
 
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/Comedy.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
@@ -193,8 +195,9 @@ Name                                                                            
 Comedy::Comedy(int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)                                                                                                 1       0 100.00%         5       0 100.00%         0       0   0.00%
 Comedy::getReleaseYear() const                                                                                                                                                                                                                                                                           1       0 100.00%         1       0 100.00%         0       0   0.00%
 operator<<(std::ostream&, Comedy const&)                                                                                                                                                                                                                                                                 1       0 100.00%         5       0 100.00%         0       0   0.00%
+Comedy::operator<(Comedy const&) const                                                                                                                                                                                                                                                                   4       0 100.00%         6       0 100.00%         2       0 100.00%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                    3       0 100.00%        11       0 100.00%         0       0   0.00%
+TOTAL                                                                                                                                                                                                                                                                                                    7       0 100.00%        17       0 100.00%         2       0 100.00%
 
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/Customer.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
@@ -212,19 +215,20 @@ Name                                                                            
 Drama::Drama(int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)                                                                                                   1       0 100.00%         5       0 100.00%         0       0   0.00%
 Drama::getReleaseYear() const                                                                                                                                                                                                                                                                            1       0 100.00%         1       0 100.00%         0       0   0.00%
 operator<<(std::ostream&, Drama const&)                                                                                                                                                                                                                                                                  1       0 100.00%         5       0 100.00%         0       0   0.00%
+Drama::operator<(Drama const&) const                                                                                                                                                                                                                                                                     4       0 100.00%         6       0 100.00%         2       0 100.00%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                    3       0 100.00%        11       0 100.00%         0       0   0.00%
+TOTAL                                                                                                                                                                                                                                                                                                    7       0 100.00%        17       0 100.00%         2       0 100.00%
 
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/InventoryManager.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 InventoryManager::readFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                      24       0 100.00%        22       0 100.00%        20       0 100.00%
 InventoryManager::splitString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                            3       0 100.00%        12       0 100.00%         2       0 100.00%
-InventoryManager::newMovie(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)                                                                             11       0 100.00%        26       0 100.00%         8       1  87.50%
+InventoryManager::newMovie(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)                                                                             11       0 100.00%        29       0 100.00%         8       1  87.50%
 InventoryManager::newCustomer(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)                                                                           1       0 100.00%         5       0 100.00%         0       0   0.00%
-InventoryManager::newCommand(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                    67       6  91.04%       111      13  88.29%        66      10  84.85%
+InventoryManager::newCommand(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                    67       5  92.54%       111      10  90.99%        66       9  86.36%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                  106       6  94.34%       176      13  92.61%        96      11  88.54%
+TOTAL                                                                                                                                                                                                                                                                                                  106       5  95.28%       179      10  94.41%        96      10  89.58%
 
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/main.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
@@ -239,20 +243,17 @@ The lines below were never executed
    38|      0|    std::cout << "Cannot Return Movie: " << movie.getTitle()
    39|      0|              << " for Customer: " << customerID_ << std::endl;
    40|      0|  }
-  134|      0|            else {
-  135|      0|              std::cout << "Unable To Borrow Movie: " << comedy << std::endl;
-  136|      0|            }
-  169|      0|            else {
-  170|      0|              std::cout << "Unable To Borrow Movie: " << drama << std::endl;
-  171|      0|            }
-  174|      0|          else if (command[0] == 'R') {
-  175|      0|            drama.setStock(drama.getStock() + 1);
-  176|      0|            customer.returnMovie(drama);
-  177|      0|          }
-  216|      0|        std::cout << "Error In Command (Command Discarded): " << command
-  217|      0|                  << std::endl;
-  218|      0|      }
-Sun Dec  4 18:45:00 PST 2022
+  137|      0|            else {
+  138|      0|              std::cout << "Unable To Borrow Movie: " << comedy << std::endl;
+  139|      0|            }
+  172|      0|            else {
+  173|      0|              std::cout << "Unable To Borrow Movie: " << drama << std::endl;
+  174|      0|            }
+  177|      0|          else if (command[0] == 'R') {
+  178|      0|            drama.setStock(drama.getStock() + 1);
+  179|      0|            customer.returnMovie(drama);
+  180|      0|          }
+Sun Dec  4 19:50:56 PST 2022
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command
