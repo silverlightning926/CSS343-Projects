@@ -60,6 +60,8 @@ No memory leaks
 
 Q: Do the tests sufficiently test the code: 
 
+Over 95% code coverage from tests
+
 - -1 for each large block of code not executed
 - -2 for each function that is never called when testing
 - Check under *7. Tests have full code coverage* paying attention to *The lines below were never executed*
