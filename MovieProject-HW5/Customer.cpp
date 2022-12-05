@@ -20,13 +20,25 @@ void Customer::borrowMovie(const Movie &movie) {
 }
 
 void Customer::returnMovie(const Movie &movie) {
+  bool found = false;
+
   for (int i = 0; i < currentMovies_.size(); i++) {
     if (currentMovies_[i].getTitle() == movie.getTitle() &&
         currentMovies_[i].getDirector() == movie.getDirector())
-      currentMovies_.erase(currentMovies_.begin() + i);
+      {
+        currentMovies_.erase(currentMovies_.begin() + i);
+        found = true;
+      }
   }
 
-  customerHistory_.emplace_back(movie, "R");
+  if(found)
+  {
+    customerHistory_.emplace_back(movie, "R");
+  }
+
+  else {
+    std::cout << "Cannot Return Movie: " << movie.getTitle() << " for Customer: " << customerID_ << std::endl;
+  }
 }
 
 void Customer::history() {
