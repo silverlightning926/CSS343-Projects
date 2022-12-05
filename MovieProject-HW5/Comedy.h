@@ -15,6 +15,8 @@ private:
 public:
   friend std::ostream &operator<<(std::ostream &out, const Comedy &comedy);
 
+  bool operator<(const Comedy &comedy) const;
+
   Comedy(int stock, const std::string &director, const std::string &title,
          int releaseYear);
 

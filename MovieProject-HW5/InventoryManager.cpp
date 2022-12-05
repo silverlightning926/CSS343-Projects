@@ -59,9 +59,11 @@ void InventoryManager::newMovie(std::vector<std::string> parsedCommand) {
     comedyInventory_.emplace_back(std::stoi(parsedCommand[1]), parsedCommand[2],
                                   parsedCommand[3],
                                   std::stoi(parsedCommand[4]));
+    std::sort(comedyInventory_.begin(), comedyInventory_.end());
   } else if (token1 == "D") {
     dramaInventory_.emplace_back(std::stoi(parsedCommand[1]), parsedCommand[2],
                                  parsedCommand[3], std::stoi(parsedCommand[4]));
+    std::sort(dramaInventory_.begin(), dramaInventory_.end());
   } else if (token1 == "C") {
     std::string const delimiter = " ";
 
@@ -81,6 +83,7 @@ void InventoryManager::newMovie(std::vector<std::string> parsedCommand) {
         std::stoi(parsedCommand[1]), parsedCommand[2], parsedCommand[3],
         parsed_token[0] + " " + parsed_token[1], std::stoi(parsed_token[2]),
         std::stoi(parsed_token[3]));
+    std::sort(classicInventory_.begin(), classicInventory_.end());
   }
 }
 

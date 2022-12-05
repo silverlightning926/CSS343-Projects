@@ -20,3 +20,11 @@ std::ostream &operator<<(std::ostream &out, const Comedy &comedy) {
       << " - " << comedy.getReleaseYear() << " [" << comedy.getStock() << "]";
   return out;
 }
+
+bool Comedy::operator<(const Comedy &comedy) const {
+    if (getTitle() == comedy.getTitle()) {
+        return getReleaseYear() < comedy.getReleaseYear();
+    }
+
+    return getTitle() < comedy.getTitle();
+}

@@ -16,6 +16,8 @@ private:
 public:
   friend std::ostream &operator<<(std::ostream &out, const Classic &classic);
 
+  bool operator<(const Classic &classic) const;
+
   Classic(int stock, const std::string &director, const std::string &title,
           std::string majorActor, int releaseMonth, int releaseYear);
 
