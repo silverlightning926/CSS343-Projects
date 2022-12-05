@@ -126,14 +126,13 @@ void InventoryManager::newCommand(const std::string &command) {
                 std::stoi(command.substr(command.length() - 4, 4))) {
           found = true;
           if (command[0] == 'B') {
-            if(comedy.getStock() > 0)
-            {
+            if (comedy.getStock() > 0) {
               comedy.setStock(comedy.getStock() - 1);
               customer.borrowMovie(comedy);
             }
 
             else {
-              std::cout << "Unable To Borrow Movie: " << comedy<< std::endl;
+              std::cout << "Unable To Borrow Movie: " << comedy << std::endl;
             }
           }
 
@@ -162,8 +161,7 @@ void InventoryManager::newCommand(const std::string &command) {
           found = true;
 
           if (command[0] == 'B') {
-            if(drama.getStock() > 0)
-            {
+            if (drama.getStock() > 0) {
               drama.setStock(drama.getStock() - 1);
               customer.borrowMovie(drama);
             }
@@ -196,8 +194,7 @@ void InventoryManager::newCommand(const std::string &command) {
           found = true;
 
           if (command[0] == 'B') {
-            if (classic.getStock() > 0)
-            {
+            if (classic.getStock() > 0) {
               classic.setStock(classic.getStock() - 1);
               customer.borrowMovie(classic);
             }
@@ -205,7 +202,7 @@ void InventoryManager::newCommand(const std::string &command) {
             else {
               std::cout << "Unable To Borrow Movie: " << classic << std::endl;
             }
-            
+
           }
 
           else if (command[0] == 'R') {

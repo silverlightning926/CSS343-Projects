@@ -12,7 +12,6 @@
 class Customer {
 
 public:
-
   Customer(std::string firstName, std::string lastName, std::string customerID);
 
   void borrowMovie(const Movie &movie);

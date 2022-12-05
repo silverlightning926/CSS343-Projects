@@ -1,4 +1,4 @@
-Sun Dec  4 16:37:10 PST 2022
+Sun Dec  4 18:44:31 PST 2022
 Linux csslab7 4.18.0-372.32.1.el8_6.x86_64 #1 SMP Thu Oct 27 15:18:36 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 uid=1139093(siddrao) gid=2121139093(siddrao) groups=2121139093(siddrao),605559(lab-access)
 =====================================================
@@ -17,6 +17,7 @@ Current Inventory:
 		COMEDY (F): Fargo by Joel Coen - 1996 [10]
 		COMEDY (F): National Lampoon's Animal House by John Landis - 1978 [10]
 		COMEDY (F): You've Got Mail by Nora Ephron - 1998 [10]
+		COMEDY (F): Helluva Time by Mary Cary - 2020 [10]
 	Drama Inventory:
 		Drama (D): Good Morning Vietnam by Barry Levinson - 1988 [10]
 		Drama (D): Same Director Good Morning Vietnam by Barry Levinson - 1988 [10]
@@ -26,6 +27,7 @@ Current Inventory:
 		Drama (D): Silence of the Lambs by Jonathan Demme - 1991 [10]
 		Drama (D): Unforgiven by Clint Eastwood - 1992 [10]
 		Drama (D): Dogfight by Nancy Savoca - 1991 [10]
+		Drama (D): CatBattle by Remen Cremen - 1898 [10]
 	Comedy Inventory:
 		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
 		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
@@ -65,6 +67,7 @@ Current Inventory:
 		COMEDY (F): Fargo by Joel Coen - 1996 [8]
 		COMEDY (F): National Lampoon's Animal House by John Landis - 1978 [9]
 		COMEDY (F): You've Got Mail by Nora Ephron - 1998 [9]
+		COMEDY (F): Helluva Time by Mary Cary - 2020 [10]
 	Drama Inventory:
 		Drama (D): Good Morning Vietnam by Barry Levinson - 1988 [9]
 		Drama (D): Same Director Good Morning Vietnam by Barry Levinson - 1988 [10]
@@ -74,6 +77,7 @@ Current Inventory:
 		Drama (D): Silence of the Lambs by Jonathan Demme - 1991 [9]
 		Drama (D): Unforgiven by Clint Eastwood - 1992 [9]
 		Drama (D): Dogfight by Nancy Savoca - 1991 [8]
+		Drama (D): CatBattle by Remen Cremen - 1898 [10]
 	Comedy Inventory:
 		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
 		Classic (C): Casablanca by Michael Curtiz - 8 / 1942 [10]
@@ -127,6 +131,7 @@ History For Customer 8888 - Porky Pig
 	B | Dogfight by Nancy Savoca
 	B | Harold and Maude by Hal Ashby
 
+Could not open file: ./invalid.txt
 =====================================================
 3. clang-tidy warnings are fixed
 =====================================================
@@ -146,29 +151,6 @@ Running clang-format on ./Comedy.cpp
 Running clang-format on ./Customer.cpp
 Running clang-format on ./Drama.cpp
 Running clang-format on ./InventoryManager.cpp
-129,130c129
-<             if(comedy.getStock() > 0)
-<             {
----
->             if (comedy.getStock() > 0) {
-136c135
-<               std::cout << "Unable To Borrow Movie: " << comedy<< std::endl;
----
->               std::cout << "Unable To Borrow Movie: " << comedy << std::endl;
-165,166c164
-<             if(drama.getStock() > 0)
-<             {
----
->             if (drama.getStock() > 0) {
-199,200c197
-<             if (classic.getStock() > 0)
-<             {
----
->             if (classic.getStock() > 0) {
-208c205
-<             
----
-> 
 Running clang-format on ./main.cpp
 =====================================================
 5. No memory leaks using g++
@@ -176,21 +158,21 @@ Running clang-format on ./main.cpp
 =====================================================
 6. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
-==67142== Memcheck, a memory error detector
-==67142== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==67142== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==67142== Command: ./a.out
-==67142== Parent PID: 66902
-==67142== 
-==67142== 
-==67142== HEAP SUMMARY:
-==67142==     in use at exit: 0 bytes in 0 blocks
-==67142==   total heap usage: 624 allocs, 624 frees, 159,745 bytes allocated
-==67142== 
-==67142== All heap blocks were freed -- no leaks are possible
-==67142== 
-==67142== For lists of detected and suppressed errors, rerun with: -s
-==67142== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==74358== Memcheck, a memory error detector
+==74358== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==74358== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==74358== Command: ./a.out
+==74358== Parent PID: 74210
+==74358== 
+==74358== 
+==74358== HEAP SUMMARY:
+==74358==     in use at exit: 0 bytes in 0 blocks
+==74358==   total heap usage: 646 allocs, 646 frees, 164,042 bytes allocated
+==74358== 
+==74358== All heap blocks were freed -- no leaks are possible
+==74358== 
+==74358== For lists of detected and suppressed errors, rerun with: -s
+==74358== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
 7. Tests have full code coverage
 =====================================================
@@ -219,10 +201,10 @@ Name                                                                            
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Customer::Customer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)                                    1       0 100.00%         5       0 100.00%         0       0   0.00%
 Customer::borrowMovie(Movie const&)                                                                                                                                                                                                                                                                      1       0 100.00%         4       0 100.00%         0       0   0.00%
-Customer::returnMovie(Movie const&)                                                                                                                                                                                                                                                                      8       0 100.00%         8       0 100.00%         6       2  66.67%
+Customer::returnMovie(Movie const&)                                                                                                                                                                                                                                                                     11       1  90.91%        17       4  76.47%         8       3  62.50%
 Customer::history()                                                                                                                                                                                                                                                                                      2       0 100.00%         8       0 100.00%         2       0 100.00%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                   12       0 100.00%        25       0 100.00%         8       2  75.00%
+TOTAL                                                                                                                                                                                                                                                                                                   15       1  93.33%        34       4  88.24%        10       3  70.00%
 
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/Drama.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
@@ -236,38 +218,41 @@ TOTAL                                                                           
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/InventoryManager.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-InventoryManager::readFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                      24       1  95.83%        22       1  95.45%        20       1  95.00%
+InventoryManager::readFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                      24       0 100.00%        22       0 100.00%        20       0 100.00%
 InventoryManager::splitString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                            3       0 100.00%        12       0 100.00%         2       0 100.00%
 InventoryManager::newMovie(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)                                                                             11       0 100.00%        26       0 100.00%         8       1  87.50%
 InventoryManager::newCustomer(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)                                                                           1       0 100.00%         5       0 100.00%         0       0   0.00%
-InventoryManager::newCommand(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                    67       6  91.04%       114      13  88.60%        66      10  84.85%
+InventoryManager::newCommand(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                                                                                                                                                                                    67       6  91.04%       111      13  88.29%        66      10  84.85%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                  106       7  93.40%       179      14  92.18%        96      12  87.50%
+TOTAL                                                                                                                                                                                                                                                                                                  106       6  94.34%       176      13  92.61%        96      11  88.54%
 
 File '/home/NETID/siddrao/CSS343Projects/MovieProject-HW5/main.cpp':
 Name                                                                                                                                                                                                                                                                                               Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-main                                                                                                                                                                                                                                                                                                     1       0 100.00%         7       0 100.00%         0       0   0.00%
+main                                                                                                                                                                                                                                                                                                     1       0 100.00%         8       0 100.00%         0       0   0.00%
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOTAL                                                                                                                                                                                                                                                                                                    1       0 100.00%         7       0 100.00%         0       0   0.00%
+TOTAL                                                                                                                                                                                                                                                                                                    1       0 100.00%         8       0 100.00%         0       0   0.00%
 =====================================================
 The lines below were never executed
 =====================================================
-   35|      0|    std::cerr << "Could not open file: " << filePath << std::endl;
-  135|      0|            else {
-  136|      0|              std::cout << "Unable To Borrow Movie: " << comedy<< std::endl;
-  137|      0|            }
-  171|      0|            else {
-  172|      0|              std::cout << "Unable To Borrow Movie: " << drama << std::endl;
-  173|      0|            }
-  176|      0|          else if (command[0] == 'R') {
-  177|      0|            drama.setStock(drama.getStock() + 1);
-  178|      0|            customer.returnMovie(drama);
-  179|      0|          }
-  219|      0|        std::cout << "Error In Command (Command Discarded): " << command
-  220|      0|                  << std::endl;
-  221|      0|      }
-Sun Dec  4 16:37:39 PST 2022
+   37|      0|  else {
+   38|      0|    std::cout << "Cannot Return Movie: " << movie.getTitle()
+   39|      0|              << " for Customer: " << customerID_ << std::endl;
+   40|      0|  }
+  134|      0|            else {
+  135|      0|              std::cout << "Unable To Borrow Movie: " << comedy << std::endl;
+  136|      0|            }
+  169|      0|            else {
+  170|      0|              std::cout << "Unable To Borrow Movie: " << drama << std::endl;
+  171|      0|            }
+  174|      0|          else if (command[0] == 'R') {
+  175|      0|            drama.setStock(drama.getStock() + 1);
+  176|      0|            customer.returnMovie(drama);
+  177|      0|          }
+  216|      0|        std::cout << "Error In Command (Command Discarded): " << command
+  217|      0|                  << std::endl;
+  218|      0|      }
+Sun Dec  4 18:45:00 PST 2022
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command

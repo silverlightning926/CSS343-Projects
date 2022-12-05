@@ -24,20 +24,19 @@ void Customer::returnMovie(const Movie &movie) {
 
   for (int i = 0; i < currentMovies_.size(); i++) {
     if (currentMovies_[i].getTitle() == movie.getTitle() &&
-        currentMovies_[i].getDirector() == movie.getDirector())
-      {
-        currentMovies_.erase(currentMovies_.begin() + i);
-        found = true;
-      }
+        currentMovies_[i].getDirector() == movie.getDirector()) {
+      currentMovies_.erase(currentMovies_.begin() + i);
+      found = true;
+    }
   }
 
-  if(found)
-  {
+  if (found) {
     customerHistory_.emplace_back(movie, "R");
   }
 
   else {
-    std::cout << "Cannot Return Movie: " << movie.getTitle() << " for Customer: " << customerID_ << std::endl;
+    std::cout << "Cannot Return Movie: " << movie.getTitle()
+              << " for Customer: " << customerID_ << std::endl;
   }
 }
 
