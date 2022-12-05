@@ -30,13 +30,13 @@ std::ostream &operator<<(std::ostream &out, const Classic &classic) {
 }
 
 bool Classic::operator<(const Classic &classic) const {
-    if (getReleaseYear() == classic.getReleaseYear()) {
-        if (getReleaseMonth() == classic.getReleaseMonth()) {
-            return getMajorActor() < classic.getMajorActor();
-        }
-
-        return getReleaseMonth() < classic.getReleaseMonth();
+  if (getReleaseYear() == classic.getReleaseYear()) {
+    if (getReleaseMonth() == classic.getReleaseMonth()) {
+      return getMajorActor() < classic.getMajorActor();
     }
 
-    return getReleaseYear() < classic.getReleaseYear();
+    return getReleaseMonth() < classic.getReleaseMonth();
+  }
+
+  return getReleaseYear() < classic.getReleaseYear();
 }

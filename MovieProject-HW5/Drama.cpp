@@ -22,9 +22,9 @@ std::ostream &operator<<(std::ostream &out, const Drama &drama) {
 }
 
 bool Drama::operator<(const Drama &drama) const {
-    if (getDirector() == drama.getDirector()) {
-        return getTitle() < drama.getTitle();
-    }
+  if (getDirector() == drama.getDirector()) {
+    return getTitle() < drama.getTitle();
+  }
 
-    return getDirector() < drama.getDirector();
+  return getDirector() < drama.getDirector();
 }
